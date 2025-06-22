@@ -1,5 +1,36 @@
 // #####################################  COLOR KIT SCRIPT  ######################################
 
+// +++++++++++++++++++++++++++    START ANIMATIONS TITLE & BUTTONS      +++++++++++++++++++++++++++++++
+// Quelle est la fonction 
+function revealOnScroll(selector, animationClass) {
+  const elements = document.querySelectorAll(selector);
+
+  elements.forEach(el => {
+    el.classList.add('fade-hidden'); // caché de base
+  });
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add(animationClass); // déclenche l'animation
+        entry.target.classList.remove('fade-hidden'); // n'est plus caché
+       } else {
+        entry.target.classList.remove(animationClass); // remise à zero
+        entry.target.classList.add('fade-hidden'); // caché à nouveau
+      }
+    });
+  }, {
+    threshold: 0.3 // commence l'animation quand 30% est visible
+  });
+
+  elements.forEach(el => observer.observe(el));
+}
+
+// Appelle la fonction pour les éléments suivants
+revealOnScroll('h2:not(.hero__title)', 'fade-zoom-in');
+revealOnScroll('.cta__btn:not(.cta__btn--hero)', 'fade-zoom-in');
+// ++++++++++++++++++++++++++++++++  END ANIMATIONS TITLE & BUTTONS  z+++++++++++++++++++++++++++++++++++
+
 // ++++++++++++++++++++++++++++++++++++++  START BURGER MENU  +++++++++++++++++++++++++++++++++++++++++++
 
 function setupBurgerMenu(btnSelector, menuSelector) {

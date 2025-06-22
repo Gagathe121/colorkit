@@ -40,11 +40,29 @@ h1{
   font-weight: 700;
 }
 
+.hero__title {
+  font-size: clamp(8rem, 8vw, 6rem);
+  font-weight: 700;
+  font-family: "yellowtail", cursive;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+  
+  animation: glowTitle 2s ease-out forwards;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
 h2 {
   margin: 5rem 0;
   text-align: center;
   font-size: 3rem;
   font-weight: 700;  
+}
+
+.legal__title{
+  font-size: 2rem;
+  text-align: left;
 }
 
 h3{
@@ -62,6 +80,28 @@ a {
   text-decoration: none; /* Enlever le soulignement des liens */
   color: inherit; /* Prendre la couleur du parent */
   cursor: pointer;
+}
+
+.legal__link{
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.legal__link--footer{
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.quick-links{  
+  font-size: 1.4rem;
+}
+
+.quick-links li a{
+  text-decoration: underline;
+}
+
+.quick-links li a:hover{
+   color: #ba08ba
 }
 
 /* ~~~~~~~~~~  TEXT  ~~~~~~~~~~ */
@@ -133,18 +173,6 @@ footer p{
   margin-top: 2rem;
 }
 
-.quick-links{  
-  font-size: 1.4rem;
-}
-
-.quick-links li a{
-  text-decoration: underline;
-}
-
-.quick-links li a:hover{
-   color: #ba08ba
-}
-
 .social-links {
   display: flex;
   justify-content: center;
@@ -168,12 +196,20 @@ footer p{
   h2 {  
   font-size: 5rem;
   } 
+  
+.hero__title{
+  font-size: 20rem;
+}
 
 .page__title{
   margin-top: 20rem;
   }
 
-/* ~~~~~~~~~~  HEADER  ~~~~~~~~~~ */    
+.footer__grid-item--quick-links{
+  text-align: left;
+}
+
+/* ~~~~~~~~~~  HEADER  ~~~~~~~~~~ */ 
   .header {
     top: 0;
     bottom: auto;
@@ -193,8 +229,9 @@ footer p{
   }
 
   .logo--header {
-    display: block;
+    display: flex;
   }
+
 /* ~~~~~~~~~~  FOOTER  ~~~~~~~~~~ */
   .footer__container{
     padding: 0.5rem;
@@ -575,105 +612,62 @@ body{
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   START ANIMATIONS   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /* ~~~~~~~~~~  HOVER EFFECTS  ~~~~~~~~~~ */
-.logo:hover, .icon:hover{
+.logo:hover, .icon:hover {
   transform: scale(1.1) rotate(-2deg);
   transition: transform 0.3s ease;
   cursor: pointer;
 }
 
- .card--cta:hover{
+ .card--cta:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
   cursor: pointer;
  }
 
-
-/* ~~~~~~~~~~  Anim bubbles - Hero Mobile Section  ~~~~~~~~~~ */
-@keyframes floaty-random {
+/* ~~~~~~~~~~  ANIM MAXIMALIST TITLE HERO  ~~~~~~~~~~ */
+@keyframes glowTitle {
   0% {
-    transform: translate(0, 0) rotate(0deg);
+    opacity: 0;
+    transform: scale(0.8);
+    filter: blur(10px);
   }
-  20% {
-    transform: translate(25px, -10px) rotate(5deg);
-  }
-  40% {
-    transform: translate(-10px, 30px) rotate(-5deg);
-  }
-  60% {
-    transform: translate(20px, 10px) rotate(10deg);
-  }
-  80% {
-    transform: translate(-25px, -30px) rotate(-10deg);
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: blur(0);
   }
   100% {
-    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-@keyframes floaty-random-2 {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
+/* ~~~~~~~~~~  ANIM BUTTONS  ~~~~~~~~~~ */
+/* HERO BTN */
+.cta__btn--hero {
+  animation: fadeZoomWiggle 2.5s ease-in-out infinite;
+}
+
+@keyframes fadeZoomWiggle {  
+  10% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+  12%, 16% {
+    transform: scale(1) translateX(-6px);
+  }
+  14%, 18% {
+    transform: scale(1) translateX(6px);
   }
   20% {
-    transform: translate(-10px, 15px) rotate(-4deg);
-  }
-  40% {
-    transform: translate(12px, -18px) rotate(6deg);
-  }
-  60% {
-    transform: translate(-8px, -10px) rotate(-6deg);
-  }
-  80% {
-    transform: translate(15px, 8px) rotate(4deg);
+    transform: scale(1) translateX(0);
   }
   100% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: scale(1) translateX(0);
   }
 }
 
-@keyframes floaty-random-3 {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  20% {
-    transform: translate(20px, 10px) rotate(10deg);
-  }
-  40% {
-    transform: translate(-5px, 20px) rotate(-5deg);
-  }
-  60% {
-    transform: translate(-20px, -25px) rotate(7deg);
-  }
-  80% {
-    transform: translate(10px, -35px) rotate(-10deg);
-  }
-  100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-}
-
-@keyframes floaty-random-4 {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  20% {
-    transform: translate(-15px, -10px) rotate(5deg);
-  }
-  40% {
-    transform: translate(10px, 25px) rotate(-7deg);
-  }
-  60% {
-    transform: translate(-10px, 5px) rotate(3deg);
-  }
-  80% {
-    transform: translate(5px, -20px) rotate(-5deg);
-  }
-  100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-}
-
-/* ~~~~~~~~~~  Anim img - Hero Desktop Section  ~~~~~~~~~~ */
+/* CTA BTN */
 @keyframes fadeZoomIn {
   from {
     opacity: 0;
@@ -694,19 +688,7 @@ body{
   transform: scale(0.9);
 }
 
-/* ~~~~~~~~~~  Anim text - Hero Desktop Section  ~~~~~~~~~~ */
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* ~~~~~~~~~~  Anim slider auto - About Section  ~~~~~~~~~~ */
+/* ~~~~~~~~~~  ANIM SLIDER AUTO - ABOUT SECTION  ~~~~~~~~~~ */
 @keyframes scrollSlider {
   from {
     transform: translateX(0);
@@ -724,153 +706,62 @@ body{
 /*  **********************************   START - INDEX   ********************************************  */
   
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   START HERO SECTION  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-/* ~~~~~~~~~~ HERO MOBILE ONLY ~~~~~~~~~~ */
-.hero-mobile {
-  display: block; 
-}
-
-.hero-desktop {
-  display: none;
-}
-
-/* ~~~~~~~~~~ GRID BUBBLES ~~~~~~~~~~ */
-.hero-mobile__grid {
-  position: relative;
-  display: grid;
-  margin: 0;
-  padding-top: 2rem 0 5rem;
-  grid-template-columns: repeat(5, 1fr);
-}
-
-/* ~~~~~~~~~~ ITEMS POSITION ~~~~~~~~~~ */
-.hero-mobile__grid-item--logo {
+#hero {
   display: flex;
-  justify-content: center;
-  grid-column: 1 / 5;
-  grid-row: 1 / 2;
-}
-
-.hero-mobile__grid-item--nuanciers {
-  grid-column: 1 / 4;
-  grid-row: 2 / 3;
-  animation: floaty-random-4 20s infinite ease-in-out;
-  animation-direction: alternate;
-}
-
-.hero-mobile__grid-item--trackers {
-  grid-column: 3 / 6;
-  grid-row: 3 / 4;
-  margin-top: -5rem;
-  animation: floaty-random 30s infinite ease-in-out;
-  animation-direction: alternate;
-}
-
-.hero-mobile__grid-item--stickers {
-  grid-column: 1 / 4;
-  grid-row: 4 / 5;
-  margin-top: -3rem;
-  animation: floaty-random-3 30s infinite ease-in-out;
-  animation-direction: alternate;
-}
-
-/* ~~~~~~~~~~ LOGO ~~~~~~~~~~ */
-.logo--hero-mobile {
-  display: flex;
-  width: 15rem;
-  height: 15rem;
-  padding: 0;
-  background-image: url(images/logos/logo-color-kit.png);
-  background-position: center;
-  background-size: 120%;
-  border-radius: 45% 55% 45% 55% / 44% 42% 58% 56%;
-  box-shadow: 
-      rgba(57, 5, 73, 0.25) 0px 50px 100px -20px, 
-      rgba(70, 4, 71, 0.3) 0px 30px 60px -30px, 
-      rgba(52, 1, 52, 0.35) 0px -2px 6px 0px inset;
+  height: 100vh;
+  width: 100vw;
+  margin-top: -7rem;
+  background-image: url(images/logos/logo-color-kit-0.png);
+  background-size: cover;
+  background-position:  center; 
+  background-repeat: no-repeat;
   overflow: hidden;
-  animation: floaty-random-2 20s infinite ease-in-out;
-  animation-direction: alternate;
-}
-
-/* ~~~~~~~~~~ LINKS ~~~~~~~~~~ */
-.hero-mobile__link {
-  display: flex;
-  justify-content: center;
+  
   align-items: center;
-  max-width: 15rem;
-  margin: 0 auto;
-  padding: 0;
-  height: auto;
-
-  color: #fff;
-  font-size: 2rem;
-  aspect-ratio: 1 / 1;
-
-  background: linear-gradient(90deg, #ee52ba, #7826d7);
-  border-radius: 45% 55% 70% 30% / 44% 58% 42% 56%;
-  box-shadow: 
-      rgba(57, 5, 73, 0.25) 0px 50px 100px -20px, 
-      rgba(70, 4, 71, 0.3) 0px 30px 60px -30px, 
-      rgba(52, 1, 52, 0.35) 0px -2px 6px 0px inset;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
 }
+
+ .hero__grid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 8rem;
+  }
+
 
                       /* ~~~~~~~~~~~~~~~~~~~~~~~~  Desktop   ~~~~~~~~~~~~~~~~~~~~~ */
 @media screen and (min-width: 750px) {
 
-  /* ~~~~~~~~~~ HERO DESKTOP ONLY ~~~~~~~~~~ */
-  .hero-mobile {
-    display: none;
+  #hero { 
+    margin-top: 0; 
+    background-position: center;
   }
 
-  .hero-desktop {
-    display: block;
-    margin-top: 10rem;
-    padding-top: 8rem;
+  .hero__grid{
+    flex-direction: row;
+    padding: 0 30rem 0 5rem;
+    gap: 8rem;
   }
 
-  .hero-desktop__container{    
-    margin-top: -6rem;
-  }
-
-  .hero-desktop__grid{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 30rem 0 10rem;
-  }
-
-  .hero-desktop__grid-item--left{
+  .hero__grid-item--left{
     flex: 2;
     display: flex;
     flex-direction: column;
-    position: relative;
   }
 
-/* ~~~~~~~~~~ IMAGE ~~~~~~~~~~ */
-  .logo--hero-desktop {
-    width: 85%;
-    height: auto;
-    display: block;
-
-    opacity: 0;
-    transform: scale(0.9);
-    animation: fadeZoomIn 1s ease-out forwards;
-    animation-delay: 0.3s;
-  }
-
-  .hero-desktop__grid-item--right{
+  .hero__grid-item--right{
     flex: 1;
+    margin-top: 10rem;
     text-align: center;
   }
 
 /* ~~~~~~~~~~ TEXT ~~~~~~~~~~ */
-  .hero-desktop__text{
-    font-size: 3rem;
-    opacity: 0;
-    animation: slideInLeft 0.8s ease-out forwards;
-    animation-delay: 0.2s;
-    transform: translateX(50px);
+  .hero__text{
+    font-size: 2.5rem;
+    text-align: center;
   }
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   END HERO SECTION  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -974,7 +865,7 @@ body{
     order: 2;
   }
 
-.about__grid-item--bio {
+  .about__grid-item--bio {
     order: 3;
 }
 /* ~~~~~~~~~~  IMAGES SLIDER   ~~~~~~~~~~ */
@@ -1516,7 +1407,32 @@ form .cta__btn{
 
 /*  *************************************   END TRACKERS PAGE  **************************************  */
 
+/*  *************************************   START LEGAL PAGES  **************************************  */
 
+.legal{
+  margin-top: 2rem;
+}
+
+.legal__section{
+  padding: 2rem;
+}
+
+.privacy-policy__list{
+  padding: 3rem;
+}
+
+@media screen and (min-width: 750px){
+  .legal{
+    margin-top: 20rem;
+  }
+
+  .legal__section{
+    padding: 5rem 30rem 5rem 5rem;
+  text-align: justify;
+}
+}
+
+/*  *************************************   END LEGAL PAGES  **************************************  */
 
 /*  ***************************    START - LANDING STICKERS & TRACKERS   *****************************  */
 

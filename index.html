@@ -59,60 +59,25 @@
 
 <!--  +++++++++++++++++++++++++++++++   START HERO SECTION   +++++++++++++++++++++++++++++++++++  -->
 
-        <!-- ----------------------   ** Start Hero Mobile Only **   -----------------------  -->
+<section id="hero" role="banner" aria-label="Banniere d'accueil Color Kit">
 
-<section id="hero-mobile" class="hero-mobile" aria-label="Banniere d'accueil Color Kit">
+    <div class="hero__container">
 
-    <div class="hero-mobile__container">
-     
-        <div class="hero-mobile__grid">
-<!-- BUBBLES QUICK LINKS -->
-            <div class="hero-mobile__grid-item hero-mobile__grid-item--logo">
-                <a href="#about" class="logo logo--hero-mobile" aria-label="A propos de Color Kit"> 
-                </a> <!-- logo géré en img url en css -->
-            </div>
+        <div class="hero__grid">
 
-            <div class="hero-mobile__grid-item hero-mobile__grid-item--nuanciers">
-                <a href="pages/nuanciers.html" class="hero-mobile__link hero-mobile__link--nuanciers" aria-label="Accéder à la page nuanciers">Nuanciers                        
-                </a>
-            </div>
-
-            <div class="hero-mobile__grid-item hero-mobile__grid-item--trackers">
-                <a href="pages/trackers.html" class="hero-mobile__link hero-mobile__link--trackers" aria-label="Accéder à la page trackers">Trackers
-                </a>
-            </div>
-
-            <div class="hero-mobile__grid-item hero-mobile__grid-item--stickers">
-                <a href="pages/stickers.html" class="hero-mobile__link hero-mobile__link--stickers" aria-label="Accéder à la page stickers">Stickers
-                </a>
-            </div>
-        </div>
-    </div>            
-</section>
-        <!-- ----------------------   ** End Hero Mobile Only **   ----------------------  -->
-
-
-        <!-- ----------------------   ** Start Hero Desktop **   ------------------------  -->
-
-<section id="hero" class="hero-desktop" role="banner" aria-label="Banniere d'accueil Color Kit">
-
-    <div class="hero-desktop__container">
-
-        <div class="hero-desktop__grid">
-
-            <div class="hero-desktop__grid-item hero-desktop__grid-item--left"> 
+            <div class="hero__grid-item hero__grid-item--left"> 
     <!-- HERO LOGO -->
-                <img src="images/logos/logo-color-kit.png" alt="Logo de Color Kit, image d'accueil" width="500" height="500" class="log logo--hero-desktop">      
+                <h2 class="hero__title">Color</h2>
+                <h2 class="hero__title">Kit</h2>      
             </div>
     <!-- HERO INTRO -->
-            <div class="hero-desktop__grid-item hero-desktop__grid-item--right"> 
-                <p class="hero-desktop__text">Des nuanciers, trackers et stickers pour t'organiser et ajouter du fun dans ta routine coloriage !</p>
-                <a href="pages/nuanciers.html" class="cta__btn">Découvre les nuanciers gratuits</a>
+            <div class="hero__grid-item hero__grid-item--right"> 
+                <p class="hero__text">Des nuanciers, trackers et stickers pour t'organiser et ajouter du fun dans ta routine coloriage !</p>
+                <a href="pages/nuanciers.html" class="cta__btn cta__btn--hero">Découvre les nuanciers gratuits</a>
             </div>
         </div>
     </div>        
 </section>
-        <!-- ----------------------   ** End Hero Desktop **   ------------------------  -->
 <!--  +++++++++++++++++++++++++++++++   END HERO SECTION   ++++++++++++++++++++++++++++++++++++++  -->
 
 
@@ -356,7 +321,7 @@
                     
                 <label class="checkbox-label" for="consent">
                     <input type="checkbox" id="consent" name="consent" required>
-                    <span>J’accepte que mes données soient collectées et utilisées uniquement pour traiter ma demande conformément à la <a href="pages/politique-confidentialite.html" target="_blank" rel="noopener noreferrer">politique de confidentialité</a>.
+                    <span>J’accepte que mes données soient collectées et utilisées uniquement pour traiter ma demande conformément à la <a href="pages/politique-confidentialite.html" target="_blank" rel="noopener noreferrer" class="legal__link">politique de confidentialité</a>.
                     </span>
                 </label>
 
@@ -421,10 +386,13 @@
             <div class="footer__grid-item footer__grid-item--legal">
                 <p class="footer__text">© 2025 Color Kit - Tous droits réservés</p>                
                 <p class="footer__text">Design & Développement web - Aml Digital</p>
+                <ul class="quick-links list-unstyled">
+                    <li><a href="pages/politique-confidentialite.html" class="legal__link legal__link--footer" aria-label="Accéder à la page de politique de confidentialité">Politique de confidentialité</a></li>
+                    <li><a href="pages/mentions-legales.html" class="legal__link legal__link--footer" aria-label="Accéder à la page de mentions légales">Mentions Légales</a></li>
+                </ul>
                 <a href="#hero" aria-label="Accueil - Color Kit">
                 <img src="images/logos/logo-color-kit.png" alt="Logo Color Kit" class="logo logo--footer" width="50" height="50">
-                </a>  
-    <!-- TO DO : Ajout des links Mentions Légales et Pol de conf -->
+                </a> 
             </div>
         </div>
     </div>
