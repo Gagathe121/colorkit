@@ -1,8 +1,8 @@
 /*  ************************    COLOR KIT - CSS MOBILE FIRST   **************************************  */
 
+/*  ***********************************    START GLOBAL CSS    **************************************  */
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  START BASE  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  START BASE  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /* RESET - Enlever les styles par défaut */
 *{ 
@@ -19,60 +19,54 @@ body{
   color: #41055b;
   font-family: "poppins", sans-serif;
   font-size: 1.8rem;
+  font-weight: 500;
   background: linear-gradient(90deg, #7733c3, #ff66cc);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;     
-  margin: 0;
-  padding: 0;    
+  background-size: cover;     
 }
 
 .list-unstyled { /* Enlever les puces des listes */
   list-style: none; 
-  margin: 0;
-  padding: 0;
-}
+ }
 
 /* ~~~~~~~~~~  TITLES  ~~~~~~~~~~ */
-.header__subtitle {
-  margin-left: 2rem;
-  font-size: 4rem;
-  font-family: "yellowtail", cursive;
-  font-weight: 500;
-  color: #41055b;
+h1{
   display: none;
 }
 
+.landing-page h1{
+  display: block;
+  font-family: "poppins", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
 h2 {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin: 5rem 0;
   text-align: center;
   font-size: 3rem;
   font-weight: 700;  
 }
 
-
-
 h3{
   font-size: 2.5rem;
+  margin-bottom: 1.8rem; 
+}
+
+footer h3{
+  font-size: 1.6rem;
+  font-weight: 700;
 }
 
 /* ~~~~~~~~~~  LINKS  ~~~~~~~~~~ */
 a {
   text-decoration: none; /* Enlever le soulignement des liens */
   color: inherit; /* Prendre la couleur du parent */
+  cursor: pointer;
 }
 
 /* ~~~~~~~~~~  TEXT  ~~~~~~~~~~ */
-p {
-  font-size: 1.8rem;
-  font-weight: 500;
+p {  
   margin-bottom: 1.8rem;  
-}
-
-/* ~~~~~~~~~~  FOOTER  ~~~~~~~~~~ */
-footer h3{
-  font-size: 1.6rem;
-  font-weight: 700;
 }
 
 footer p{
@@ -80,31 +74,277 @@ footer p{
   font-weight: 300;
 }
 
-.sr-only { 
-  position: absolute;
-  width: 1px;
-  height: 1px;
+.page__intro{
+  text-align: center;
+}
+
+/* ~~~~~~~~~~  ICONS  ~~~~~~~~~~ */
+.icon--etsy{
+  color: #f56400
+}
+
+/* ~~~~~~~~~~  HEADER  ~~~~~~~~~~ */
+.header {
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%; 
+  padding: 1rem 0;
+
+  background-color: rgba(238, 73, 205, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow:
+      rgba(57, 5, 73, 0.25) 0px 50px 100px -20px,
+      rgba(70, 4, 71, 0.3) 0px 30px 60px -30px,
+      rgba(52, 1, 52, 0.35) 0px -2px 6px 0px inset;
+}
+
+.logo--header {
+  width: 10rem;
+  height: auto;
+  display: none;
+}
+
+/* ~~~~~~~~~~  FOOTER  ~~~~~~~~~~ */
+.footer__container{
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+
+  width: 100%;
+  padding: 1rem 0 8rem 0;
+  margin: 0;   
+
+  background-color: rgba(106, 13, 127, 0.3);
+  backdrop-filter: blur(10px);  
+}
+
+.footer__grid-item{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.quick-links{  
+  font-size: 1.4rem;
+}
+
+.quick-links li a{
+  text-decoration: underline;
+}
+
+.quick-links li a:hover{
+   color: #ba08ba
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;   
   padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap; 
-  border: 0;
+  margin-top: 1rem;
+  list-style: none;
+}
+
+
+                    /* ~~~~~~~~~~~~~~~~~~~~~~~~  DESKTOP  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media screen and (min-width: 750px) {
+
+/* ~~~~~~~~~~  TITLE  ~~~~~~~~~~ */ 
+  h1{
+    display: block;    
+    font-size: 4rem;
+    font-family: "yellowtail", cursive; 
+  }
+
+  h2 {  
+  font-size: 5rem;
+  } 
+
+.page__title{
+  margin-top: 20rem;
+  }
+
+/* ~~~~~~~~~~  HEADER  ~~~~~~~~~~ */    
+  .header {
+    top: 0;
+    bottom: auto;
+    padding: 0;
+  }
+
+  .header__container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30rem;
+
+    max-width: 1200px;    
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  .logo--header {
+    display: block;
+  }
+/* ~~~~~~~~~~  FOOTER  ~~~~~~~~~~ */
+  .footer__container{
+    padding: 0.5rem;
+  }
+  
+  .footer__grid{
+    display:flex;
+    width: 100%;
+    justify-content: space-between;
+    margin:0 2rem;
+}
+}
+
+            /* ~~~~~~~~~~~~~~~~~~~~~~~~  DARK MODE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media (prefers-color-scheme: dark) {
+body{
+  color: #eee1ee;  
+  background: linear-gradient(90deg, #19011c, #320138);  
+}
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   END BASE   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   START COMPONENTS    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* ~~~~~~~~~~ BURGER ~~~~~~~~~~ */
+.burger__menu {
+  display: block;
+}
+
+/*  BURGER BTN  */
+.burger__btn {
+  display: flex;  
+  justify-content: center;
+  align-items: center;  
+  gap: 2rem;
+
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+
+  background-color: rgba(193, 17, 164, 0.6);
+  border: none;
+  border-radius: 4rem;
+  cursor: pointer;  
+}
+
+.burger__text {
+  display: none;
+}
+
+/*  BURGER BARS  */
+.burger__btn .burger__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  position: relative;
+}
+
+.burger__btn .burger__bar {
+  width: 3.5rem;
+  height: 0.4rem;
+  background-color: #eee1ee;
+  border-radius: 0.2rem;
+  transition: all 0.4s ease;
+}
+
+/*  BURGER BARS TRANSFORM  */
+.burger__btn.active .burger__bar:nth-child(1) { /* barre 1 tourne et se déplace */
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 3.5rem;
+}
+
+.burger__btn.active .burger__bar:nth-child(2) { /* barre 2 disparaît */
+  opacity: 0;
+}
+
+.burger__btn.active .burger__bar:nth-child(3) { /* barre 3 tourne et se déplace */
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 3.5rem;
+}
+
+/*  BURGER LIST */
+.burger__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*  BURGER WRAP BOTTOM */
+.burger__wrap {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+
+  position: fixed;
+  top: -21rem;
+  right: 0;
+  left: 0;
+
+  width: 100%; 
+  padding: 1rem;
+  z-index: 1000;
+
+  background-color: rgba(238, 73, 205, 0.9);
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+     rgba(57, 5, 73, 0.25) 0px 50px 100px -20px,
+     rgba(70, 4, 71, 0.3) 0px 30px 60px -30px,
+     rgba(52, 1, 52, 0.35) 0px -2px 6px 0px inset;
+
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/*  BURGER OPEN  */
+.burger__wrap.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.burger__wrap.open .burger__list {
+  display: flex;
 }
 
 /* ~~~~~~~~~~  CTA BUTTONS  ~~~~~~~~~~ */
 .cta__btn {
-  display: flex;
+  display: inline-flex;
+  align-items: center;
   text-align: center;
   justify-content: center;
+  gap: 1rem;
+  max-width: 40rem;
+
   font-size: 1.8rem;
   font-weight: 700;
   margin: 3rem;
   padding: 0.9rem 2rem;
-
+  
   background-color: #4a0867; 
-  border: none; 
   border-radius: 5rem;
+  border: none;
   color: #ff66cc; 
   box-shadow: 0 6px 15px rgba(118, 3, 126, 0.6);
 
@@ -117,83 +357,205 @@ footer p{
 }
 
 .cta__btn:hover {
-  background-color: #6f1da9; /* un violet un peu plus clair au hover */
-  box-shadow: 0 4px 10px rgba(255, 102, 204, 0.6); /* glow rose */
+  background-color: #6f1da9; 
+  box-shadow: 0 4px 10px rgba(255, 102, 204, 0.6); 
 }
 
 .cta__btn:active {
   transform: scale(0.97);
-  background-color: #7e26bbcc; /* léger fondu violet au clic */
+  background-color: #7e26bbcc; 
   box-shadow: 0 4px 10px rgba(255, 102, 204, 0.6);
 }
 
+/* ~~~~~~~~~~  CARDS  ~~~~~~~~~~ */
+
+/* CARD STYLE */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  width: 100%;    
+
+  border-radius: 2rem;
+  background-color: rgba(238, 73, 205, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    rgba(57, 5, 73, 0.25) 0px 50px 100px -20px,
+    rgba(70, 4, 71, 0.3) 0px 30px 60px -30px,
+    rgba(52, 1, 52, 0.35) 0px -2px 6px 0px inset;
+
+  background: url(/images/produits/trackers/splash2.png);
+  background-position: 60% center;
+  background-repeat: no-repeat;
+}
+/* INNER STYLE */
+.card__img {
+  width: 100%;
+  height: auto;
+}
+
+.card__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  text-align: center;
+  /* TEXT BCKGROUND */
+  background-color: rgba(36, 1, 35, 0.15);  
+  backdrop-filter: blur(6px);
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;   
+}
+
+.card__title {
+  text-align: center;
+}
+
+.card__description {
+  font-size: 1.8rem;
+}
+
+/* ~~~~~~~~~~  CROSSLINKS CARDS  ~~~~~~~~~~ */
+/* POSITION */
+.crosslinks__grid{
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem; 
+}
+
+.crosslinks__cta{
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  text-align: center; 
+}
+
+/* INNER STYLE */
+.card--cta {
+  width: 100%;
+}
+
+.card--cta .card__img {
+  width: 100%;
+}
+
+.card--cta .card__description {
+  font-size: 1.2rem;
+}
+
+/* ~~~~~~~~~~  SWIPER BUTTON  ~~~~~~~~~~ */
+.swiper__btn {
+  border-radius: 50%;
+  background-color: rgba(255, 105, 180, 0.2); 
+  border: none;
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  pointer-events: all;
+  z-index: 2;
+}
+/* SWIPER ARROW */
+.swiper__btn svg {
+  fill: white; 
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+/* SWIPER BTN TAP EFFECT */
+.swiper__btn:active {
+  background-color: rgba(255, 105, 180, 0.6); 
+  transform: scale(0.95); 
+}
+
+
                     /* ~~~~~~~~~~~~~~~~~~~~~~~~  DESKTOP  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @media screen and (min-width: 750px) {
-  h2 {  
-  font-size: 5rem;
-}  
+
+/* ~~~~~~~~~~ BURGER ~~~~~~~~~~ */
+
+/* NO BACKGROUND */
+  .burger__btn {
+    background: none;
+  }
+
+/*  BURGER BTN TEXT  */
+  .burger__btn .burger__text {
+    display: flex;
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: "poppins", sans-serif;
+    color: #41055b;
+  }
+
+/*  BURGER BARS */
+  .burger__btn .burger__bar {  
+    background-color: #41055b;  
+}
+ 
+  .burger__btn .burger__bar:nth-child(2) {
+    display: none;
+  }
+
+  /*  BURGER LIST */
+  .burger__list {    
+    flex-direction: row;
+    gap: 8rem;
+    margin-left: 4rem;   
+  }
+
+/*  BURGER WRAP TOP */
+  .burger__wrap {
+    top: 12rem;
+  }
+
+/* ~~~~~~~~~~  CROSSLINKS CARDS  ~~~~~~~~~~ */
+/* POSITION */
+  .crosslinks__grid{
+    gap: 3rem;
+}
+
+  .card--cta {
+    display: flex;
+    flex-direction: row;
+    max-width: 40rem;
+  }
+
+  .card--cta .card__img {
+  width: 20rem;
+}
+
+  .card--cta .card__description {
+    font-size: 1.6rem;
+  }
 }
 
             /* ~~~~~~~~~~~~~~~~~~~~~~~~  DARK MODE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 @media (prefers-color-scheme: dark) {
 
-  body{
-  color: #eee1ee;  
-  background: linear-gradient(90deg, #19011c, #320138);  
+/* ~~~~~~~~~~ BURGER  ~~~~~~~~~~ */
+ .burger__text {    
+    color: #eee1ee !important;
+  }
+
+.burger__bar {  
+    background-color: #eee1ee !important;  
 }
 
-.header__subtitle { 
-  color: #eee1ee;  
+  .burger__wrap{
+    background-color: rgba(87, 4, 97, 0.9);
 }
 
 /* ~~~~~~~~~~  CTA BUTTONS  ~~~~~~~~~~ */
-.products__card-btn{
-  border: solid; 
-  border-radius: 50%;  
-  color: #eee1ee;
-  box-shadow: 0 6px 15px rgba(122, 3, 126, 0.6);
-  
-
-  transition: 
-    background-color 0.3s ease, 
-    box-shadow 0.3s ease, 
-    transform 0.2s ease;
-  backdrop-filter: blur(10px);
-  cursor: pointer;
-}
-
-.products__card-btn:hover{
-  background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 10px rgba(234, 215, 227, 0.3);
-}
-
-.products__card-btn:active{
-  transform: scale(0.97);
-  background-color: rgba(255, 255, 255, 0.236);
-  box-shadow: 0 4px 10px rgba(234, 215, 227, 0.3);
-}
-
-.cta__btn {
-  border: solid 2px #4a0867; 
-  border-radius: 5rem;
-  color: #4a0867; 
+.cta__btn {  
+  color: #4a0867 !important; /* évite l'écrasement de la couleur blanche par défaut en DM */
   background-color: #f9f7fb; 
-  box-shadow: 0 6px 15px rgba(122, 3, 126, 0.4); 
-
-  transition: 
-    background-color 0.3s ease, 
-    box-shadow 0.3s ease, 
-    transform 0.2s ease;
-  backdrop-filter: blur(10px);
-  cursor: pointer;
-  padding: 0.9rem 2rem;
-  font-weight: 700;
-  font-size: 1.8rem;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin: 3rem;
+  box-shadow: 0 6px 15px rgba(122, 3, 126, 0.6);  
 }
 
 .cta__btn:hover {
@@ -202,18 +564,31 @@ footer p{
 }
 
 .cta__btn:active {
-  transform: scale(0.97);
   background-color: #e8e6f1; 
   box-shadow: 0 4px 10px rgba(74, 8, 103, 0.4);
 }
 }
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  END BASE  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   END COMPONENTS  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  START ANIMATION  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   START ANIMATIONS   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-                /* ~~~~~~~~~~  Anim bubbles - Hero Mobile Section  ~~~~~~~~~~ */
+/* ~~~~~~~~~~  HOVER EFFECTS  ~~~~~~~~~~ */
+.logo:hover, .icon:hover{
+  transform: scale(1.1) rotate(-2deg);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+ .card--cta:hover{
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+ }
+
+
+/* ~~~~~~~~~~  Anim bubbles - Hero Mobile Section  ~~~~~~~~~~ */
 @keyframes floaty-random {
   0% {
     transform: translate(0, 0) rotate(0deg);
@@ -298,8 +673,7 @@ footer p{
   }
 }
 
-
-                 /* ~~~~~~~~~~  Anim img - Hero Desktop Section  ~~~~~~~~~~ */
+/* ~~~~~~~~~~  Anim img - Hero Desktop Section  ~~~~~~~~~~ */
 @keyframes fadeZoomIn {
   from {
     opacity: 0;
@@ -320,8 +694,7 @@ footer p{
   transform: scale(0.9);
 }
 
-
-                    /* ~~~~~~~~~~  Anim text - Hero Desktop Section  ~~~~~~~~~~ */
+/* ~~~~~~~~~~  Anim text - Hero Desktop Section  ~~~~~~~~~~ */
 @keyframes slideInLeft {
   from {
     opacity: 0;
@@ -333,7 +706,7 @@ footer p{
   }
 }
 
-                    /* ~~~~~~~~~~  Anim slider auto - About Section  ~~~~~~~~~~ */
+/* ~~~~~~~~~~  Anim slider auto - About Section  ~~~~~~~~~~ */
 @keyframes scrollSlider {
   from {
     transform: translateX(0);
@@ -342,349 +715,23 @@ footer p{
     transform: translateX(-50%);
   }
 }
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  END ANIMATION  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   END ANIMATION   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+/*  *************************************    END GLOBAL CSS    **************************************  */
 
-/* ************************************   START GLOBAL PAGES ************************************* */
 
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  START HEADER  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-.header {
-  position: fixed;
-  bottom: 0;
-  top: auto;
-  z-index: 1000;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 100%;
-  max-width: 100vw;
-  padding: 1rem 0;
-
-  background-color: rgba(238, 73, 205, 0.3);
-  backdrop-filter: blur(10px);
-  box-shadow:
-      rgba(57, 5, 73, 0.25) 0px 50px 100px -20px,
-      rgba(70, 4, 71, 0.3) 0px 30px 60px -30px,
-      rgba(52, 1, 52, 0.35) 0px -2px 6px 0px inset;
-}
-
-.header__logo {
-  width: 10rem;
-  height: auto;
-  display: none;
-}
-
-
-                  /* ~~~~~~~~~~~~~~~~~~~~~~~~   Desktop   ~~~~~~~~~~~~~~~~~~~~~ */
-@media screen and (min-width: 750px) {
-    
-  .header {
-    top: 0;
-    bottom: auto;
-    padding: 0;
-  }
-
-  .header__container {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30rem;
-
-    max-width: 1200px;
-    height: auto;
-    margin: 0 auto;
-    padding: 1rem;
-  }
-
-  .header__logo,
-  .header__subtitle {
-    display: block;
-  }
-}
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  END HEADER  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ START MENU BURGER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-.burger__menu {
-  display: block;
-}
-
-/* ~~~~~~~~~~ BUTTON ~~~~~~~~~~ */
-.burger__btn {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;  
-  gap: 2rem;
-
-  position: relative;
-  width: 6rem;
-  height: 6rem;
-
-  background-color: rgba(193, 17, 164, 0.6);
-  border: none;
-  border-radius: 4rem;
-
-  cursor: pointer;  
-}
-
-/* ~~~~~~~~~~ BURGER BTN TEXT ~~~~~~~~~~ */
-.burger__btn .burger__text {
-  display: none;
-}
-
-/* ~~~~~~~~~~ BURGER BARS ~~~~~~~~~~ */
-.burger__btn .burger__bars {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  position: relative;
-}
-
-.burger__btn .burger__bar {
-  width: 3.5rem;
-  height: 0.4rem;
-  background-color: #fff;
-  border-radius: 0.2rem;
-  transition: all 0.4s ease;
-}
-
-/* ~~~~~~~~~~ BURGER BARS TRANSFORM ~~~~~~~~~~ */
-.burger__btn.active .burger__bars {
-  position: relative;
-}
-
-.burger__btn.active .burger__bar:nth-child(1) { /* barre 1 tourne et se déplace */
-  transform: rotate(45deg);
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 3.5rem;
-}
-
-.burger__btn.active .burger__bar:nth-child(2) { /* barre 2 disparaît */
-  opacity: 0;
-}
-
-.burger__btn.active .burger__bar:nth-child(3) { /* barre 3 tourne et se déplace */
-  transform: rotate(-45deg);
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 3.5rem;
-}
-
-/* ~~~~~~~~~~ BURGER LIST ~~~~~~~~~~ */
-.burger__list {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* ~~~~~~~~~~ BURGER WRAP BOTTOM ~~~~~~~~~~ */
-.burger__wrap {
-  opacity: 0;
-  transform: translateY(-20px);
-  pointer-events: none;
-
-  position: fixed;
-  top: -21rem;
-  right: 0;
-  left: 0;
-
-  width: 100%;
-  max-width: 100vw;
-  padding: 1rem;
-  z-index: 1000;
-
-  background-color: rgba(238, 73, 205, 0.9);
-  backdrop-filter: blur(10px);
-
-  box-shadow:
-     rgba(57, 5, 73, 0.25) 0px 50px 100px -20px,
-     rgba(70, 4, 71, 0.3) 0px 30px 60px -30px,
-     rgba(52, 1, 52, 0.35) 0px -2px 6px 0px inset;
-
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* ~~~~~~~~~~ BURGER OPEN ~~~~~~~~~~ */
-.burger__wrap.open {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.burger__wrap.open .burger__list {
-  display: flex;
-}
-
-                  /* ~~~~~~~~~~~~~~~~~~~~~~~~  DESKTOP   ~~~~~~~~~~~~~~~~~~~~~ */
-@media screen and (min-width: 750px) {
-
-/* ~~~~~~~~~~ NO BACKGROUND ~~~~~~~~~~ */
-  .burger__btn {
-    background: none;
-  }
-
-/* ~~~~~~~~~~ BURGER BTN TEXT ~~~~~~~~~~ */
-  .burger__btn .burger__text {
-    display: flex;
-    font-size: 1.6rem;
-    font-weight: 700;
-    font-family: "poppins", sans-serif;
-    color: #41055b;
-  }
-
-/* ~~~~~~~~~~ BARS COLOR ~~~~~~~~~~ */
-  .burger__btn .burger__bar {  
-    background-color: #41055b;  
-}
-  /* ~~~~~~~~~~ MIDDLE BAR HIDDEN ~~~~~~~~~~ */
-  .burger__btn .burger__bar:nth-child(2) {
-    display: none;
-  }
-
-  /* ~~~~~~~~~~ BURGER LIST ~~~~~~~~~~ */
-  .burger__list {
-    display: flex;
-    flex-direction: row;
-    gap: 8rem;
-     margin-left: 4rem;
-    align-items: center;
-  }
-
-/* ~~~~~~~~~~ BURGER WRAP TOP ~~~~~~~~~~ */
-  .burger__wrap {
-    top: 12rem;
-  }
-}
-
-
-
-                  /* ~~~~~~~~~~~~~~~~~~~~~~~~   DARK MODE   ~~~~~~~~~~~~~~~~~~~~~ */
-
-@media (prefers-color-scheme: dark) {
-  /* ~~~~~~~~~~ BURGER BTN TEXT ~~~~~~~~~~ */
-  .burger__btn .burger__text {
-    
-    color: #eee1ee;
-  }
-
-/* ~~~~~~~~~~ BARS COLOR ~~~~~~~~~~ */
-  .burger__btn .burger__bar {  
-    background-color: #eee1ee;  
-}
-
-.burger__wrap{
-background-color: rgba(87, 4, 97, 0.9);
-}
-}
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ END MENU BURGER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ START FOOTER SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-.footer__container{
-  display: flex;
-  align-items: center;
-  justify-content: center; 
-
-  width: 100%;
-  padding: 1rem;
-  margin-bottom: 8rem; 
-  margin-top: 8rem; 
-
-  background-color: rgba(106, 13, 127, 0.3);
-  backdrop-filter: blur(10px);  
-}
-
-.footer__grid-item{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: flex-start;
-  margin-top: 2rem;
-}
-
-.quick-links{
-  text-decoration: underline;
-  font-size: 1.4rem;
-}
-
-.quick-links li a:hover{
-   color: #ba08ba
-}
-
-.social-links {
-  display: flex;
-  gap: 1.5rem; 
-  justify-content: center;
-  padding: 0;
-  margin-top: 1rem;
-  list-style: none;
-}
-
-.icon__etsy{
-  color: #f56400
-}
-
-.icon__insta{
-  color: #da0f9d
-}
-
-
-
-
-           /* ~~~~~~~~~~~~~~~~~~~~~~~~  Desktop   ~~~~~~~~~~~~~~~~~~~~~ */
-@media (min-width: 750px) {
-
-  .footer__container{
-    margin-bottom: 0;
-    box-shadow: rgba(57, 5, 73, 0.25) 0px 50px 100px -20px,
-                rgba(70, 4, 71, 0.3) 0px 30px 60px -30px,
-                rgba(52, 1, 52, 0.35) 0px -2px 6px 0px inset;
-  }
-  .footer__grid{
-  display:flex;
-  width: 100%;
-  justify-content: space-between;
-  margin:0 2rem;
-  padding: 1rem;   
-}
-
-.footer__grid-item{  
-  margin-top: 0;  
-}  
-}
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ END FOOTER SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-/*  *********************************  END - GLOBAL PAGES  ******************************************  */
-
-
-
-
-
-
-
-
-
-/*  *********************************   START - INDEX   ******************************************  */
+/*  **********************************   START - INDEX   ********************************************  */
   
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ START HERO SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   START HERO SECTION  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /* ~~~~~~~~~~ HERO MOBILE ONLY ~~~~~~~~~~ */
 .hero-mobile {
-  display: block;
-  margin: 0 auto;
+  display: block; 
 }
 
 .hero-desktop {
   display: none;
-  margin-top: 10rem;
-  padding-top: 8rem;
 }
 
 /* ~~~~~~~~~~ GRID BUBBLES ~~~~~~~~~~ */
@@ -692,8 +739,7 @@ background-color: rgba(87, 4, 97, 0.9);
   position: relative;
   display: grid;
   margin: 0;
-  padding-top: 2rem;
-  padding-bottom: 5rem;
+  padding-top: 2rem 0 5rem;
   grid-template-columns: repeat(5, 1fr);
 }
 
@@ -729,7 +775,7 @@ background-color: rgba(87, 4, 97, 0.9);
 }
 
 /* ~~~~~~~~~~ LOGO ~~~~~~~~~~ */
-.hero-mobile__logo {
+.logo--hero-mobile {
   display: flex;
   width: 15rem;
   height: 15rem;
@@ -759,7 +805,6 @@ background-color: rgba(87, 4, 97, 0.9);
 
   color: #fff;
   font-size: 2rem;
-  font-weight: 500;
   aspect-ratio: 1 / 1;
 
   background: linear-gradient(90deg, #ee52ba, #7826d7);
@@ -780,6 +825,8 @@ background-color: rgba(87, 4, 97, 0.9);
 
   .hero-desktop {
     display: block;
+    margin-top: 10rem;
+    padding-top: 8rem;
   }
 
   .hero-desktop__container{    
@@ -801,7 +848,7 @@ background-color: rgba(87, 4, 97, 0.9);
   }
 
 /* ~~~~~~~~~~ IMAGE ~~~~~~~~~~ */
-  .hero-desktop__img {
+  .logo--hero-desktop {
     width: 85%;
     height: auto;
     display: block;
@@ -810,8 +857,7 @@ background-color: rgba(87, 4, 97, 0.9);
     transform: scale(0.9);
     animation: fadeZoomIn 1s ease-out forwards;
     animation-delay: 0.3s;
-}
-} 
+  }
 
   .hero-desktop__grid-item--right{
     flex: 1;
@@ -826,31 +872,27 @@ background-color: rgba(87, 4, 97, 0.9);
     animation-delay: 0.2s;
     transform: translateX(50px);
   }
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ END HERO SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   END HERO SECTION  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ START ABOUT SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+/* ~~~~~~~~~~   SLIDER AUTO   ~~~~~~~~~~ */
 .about__container {
-  padding: 4rem 0;
- 
+  padding: 4rem 0; 
 }
 
 .about__grid {
   display: flex;
   flex-direction: column;
 }
-/* ~~~~~~~~~~   LEGENDES   ~~~~~~~~~~ */
-.about__img-with-caption {
-  position: relative;
-  display: inline-block;
-  width: auto;  
-}
+
 /* ~~~~~~~~~~   IMAGES   ~~~~~~~~~~ */
-.about__img{
-display: block;
-width: 60rem;
-height: auto;
+.about__img {
+  display: block;
+  width: 60rem;
+  height: auto;
 }
 
 /* ~~~~~~~~~~   POSITION DES IMAGES EN LIGNE   ~~~~~~~~~~ */
@@ -861,7 +903,6 @@ height: auto;
 
 .about__list-img {
   display: flex;
-  flex-direction: row;
   flex-wrap: nowrap;
   overflow-x: auto;
   width: max-content;
@@ -871,47 +912,53 @@ height: auto;
 
 .about__list-img li {
   flex: 0 0 auto;
-  scroll-snap-align: start;
   width: fit-content;
+  scroll-snap-align: start;  
+}
+
+/* ~~~~~~~~~~   LEGENDES   ~~~~~~~~~~ */
+.about__img-with-caption {
+  position: relative;
+  display: inline-block;
 }
 
 /* ~~~~~~~~~~  POSITION DES LEGENDES   ~~~~~~~~~~ */
 .about__caption {
   display: flex;
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 0;
   left: 50%;
-  transform: translateX(-50%); /* ajouter au left 50% = centrer parfaitement*/
+  transform: translateX(-50%); /* ajouter au left 50% = centrer parfaitement */
 }
 
 /* ~~~~~~~~~~  INTRO COLOR KIT   ~~~~~~~~~~ */
-.about__grid-item--intro{  
+.about__grid-item--intro {  
   padding: 1rem;
   text-align: justify;  
 }
 
 /* ~~~~~~~~~~  BIO   ~~~~~~~~~~ */
-.about__grid-bottom{
+.about__grid-item--bio {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-  gap: 3rem;
   justify-content: center;
-  align-items: center;  
+  align-items: center; 
+  padding: 1rem;
+  gap: 3rem;   
 }
 
-.about__avatar{
-  display: flex;
-  border-radius: 50%;
+.about__avatar {
+  display: flex;  
   width: 30rem;
   height: auto;
+  border-radius: 50%;
 }
 
-.about__grid-item--bio{  
-  padding: 1rem;
-  text-align: justify;
+.about__grid-item--text{  
+  padding: 1rem;  
   width: 100%;  
-  align-items: center; 
+  align-items: center;
+  text-align: justify; 
 }
 
 
@@ -927,14 +974,12 @@ height: auto;
     order: 2;
   }
 
-.about__grid-bottom {
+.about__grid-item--bio {
     order: 3;
 }
 /* ~~~~~~~~~~  IMAGES SLIDER   ~~~~~~~~~~ */
   .about__img{
-    display: block;
     width: 80rem;
-    height: auto;
     margin: 0 auto;
 }
 /* ~~~~~~~~~~  INTRO COLOR KIT   ~~~~~~~~~~ */
@@ -944,155 +989,56 @@ height: auto;
 }
 
 /* ~~~~~~~~~~  BIO   ~~~~~~~~~~ */
-.about__grid-bottom{
-  display: flex;
-  flex-direction: row;  
+.about__grid-item--bio {  
+  flex-direction: row;
+  justify-content: flex-start;  
   padding: 3rem;
   margin: 5rem;
-  gap: 10rem;
-  justify-content: flex-start;
-  align-items: center;
+  gap: 10rem;  
 }
 /* ~~~~~~~~~~  AVATAR   ~~~~~~~~~~ */
 .about__avatar{
-  display: flex;
-  border-radius: 50%;
   width: 45rem;
-  height: auto;
 }
 /* ~~~~~~~~~~  TEXT   ~~~~~~~~~~ */
-.about__grid-item--bio{  
-  padding: 6rem;
-  width: 100%;
-  align-items: center;  
+.about__grid-item--text{  
+  padding: 6rem;  
 }
 }
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ END ABOUT SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   END ABOUT SECTION   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ START PRODUCTS SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-
 .products__grid{
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  justify-items: center;
-  
-}
-/* ~~~~~~~~~~   CARDS STYLES   ~~~~~~~~~~ */
-.products__grid-item{
-  width: 35rem;
-  height: auto;
-  margin: 1rem;
-  padding: 1rem;
-
-  border-radius: 2rem;
-  background-color: rgba(238, 73, 205, 0.3);
-  backdrop-filter: blur(10px);
-  box-shadow:
-      rgba(57, 5, 73, 0.25) 0px 50px 100px -20px,
-      rgba(70, 4, 71, 0.3) 0px 30px 60px -30px,
-      rgba(52, 1, 52, 0.35) 0px -2px 6px 0px inset;
-}
-
-.products__card-img{
-  width: 100%;
-  height: auto;
-}
-
-/* ~~~~~~~~~~   CARDS CAPTION   ~~~~~~~~~~ */
-.products__card-inner{
-  display: flex;
+  display:flex;
   flex-direction: column;
+  gap: 8rem;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-/* ~~~~~~~~~~   BUTTON   ~~~~~~~~~~ */
-.products__card-btn {
-  display: block;
-  text-align: center;
-  margin: 3rem;
-  padding: 0.9rem 2rem;
-
-  border: solid;
-  border-radius: 2rem;  
-  color: #4a0867;
-  box-shadow: 0 6px 15px rgba(118, 3, 126, 0.6);
-  
-
-  transition: 
-    background-color 0.3s ease, 
-    box-shadow 0.3s ease, 
-    transform 0.2s ease;
-  backdrop-filter: blur(10px);
-  cursor: pointer;
-}
-
-.products__card-btn:hover{
-  background-color: rgba(234, 150, 231, 0.51);
-  box-shadow: 0 4px 10px rgba(234, 215, 227, 0.3);
-}
-
-.products__card-btn:active{
-  transform: scale(0.97);
-  background-color: rgba(255, 255, 255, 0.236);
-  box-shadow: 0 4px 10px rgba(234, 215, 227, 0.3);
+  justify-items: center;
+  width: 100%;  
 }
 
                     /* ~~~~~~~~~~~~~~~~~~~~~~~~  Desktop   ~~~~~~~~~~~~~~~~~~~~~ */
 @media screen and (min-width: 750px){
 
   .products__grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 100%;    
-  }
-
-  .products__grid-item{  
-    width: 40rem;
-    height: auto;
-    margin: 1rem;    
-}
-}
-
-                    /* ~~~~~~~~~~~~~~~~~~~~~~~~  Dark Mode   ~~~~~~~~~~~~~~~~~~~~~ */
-
-@media (prefers-color-scheme: dark) {
-  /* ~~~~~~~~~~ BUTTONS ~~~~~~~~~~ */
-   .products__card-btn {
-    color: #eee1ee;
-    border-color: #eee1ee;
-    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.4);
-  }
-
-  .products__card-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
-  }
-
-  .products__card-btn:active {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: scale(0.97);
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    flex-direction: row;
+    justify-content: center;
   }
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ END PRODUCTS SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ START GALLERY SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
 .gallery__slider{
   position: relative;     
 }
+
 /* ~~~~~~~~~~   IMG POSITION IN LINE   ~~~~~~~~~~ */
 .gallery__swiper-wrapper{  
   overflow-x: auto;
   display: flex;
-  flex-direction: row;
   flex-wrap: nowrap;
   overflow-x: auto;
   width: 100%;
@@ -1108,44 +1054,15 @@ height: auto;
   border-radius: 1rem;
 }
 
-/* ~~~~~~~~~~   ARROWS POSITION   ~~~~~~~~~~ */
-.gallery__swiper-btn-group{
+/* ~~~~~~~~~~   SWIPER BTN POSITION   ~~~~~~~~~~ */
+.gallery__swiper-nav{
   display: flex;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 1rem;
-  right: 1rem;
-  justify-content: space-between;
+  top: 10rem;
+  left: 0.5rem;
+  right: 0.5rem;  
 }
-/* ~~~~~~~~~~  BUTTON STYLE   ~~~~~~~~~~ */
-.gallery__swiper-btn {
-  border-radius: 50%;
-  background-color: rgba(255, 105, 180, 0.2); 
-  border: none;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
 
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  pointer-events: all;
-  z-index: 2;
-}
-/* ~~~~~~~~~~  ARROW STYLE   ~~~~~~~~~~ */
-.gallery__swiper-btn svg {
-  fill: white; 
-  width: 24px;
-  height: 24px;
-  transition: transform 0.3s ease;
-}
-/* ~~~~~~~~~~  TAP EFFECT   ~~~~~~~~~~ */
-.gallery__swiper-btn:active {
-  background-color: rgba(255, 105, 180, 0.6); 
-  transform: scale(0.95); 
-}
 
                       /* ~~~~~~~~~~~~~~~~~~~~~~~~  Desktop   ~~~~~~~~~~~~~~~~~~~~~ */
 @media screen and (min-width: 750px){
@@ -1159,7 +1076,7 @@ height: auto;
 }
 
 /* ~~~~~~~~~~  BUTTON HIDDEN   ~~~~~~~~~~ */
-  .gallery__swiper-btn-group{
+  .gallery__swiper-nav{
     display: none;
   }
 
@@ -1211,53 +1128,19 @@ height: auto;
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ START CONTACT SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /* ~~~~~~~~~~   GRID ORGANISATION   ~~~~~~~~~~ */
-.contact__grid{
+.contact__grid {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1rem;
   gap: 5rem;
-}
-
-.contact__grid-item--form{
-  text-align: justify;
+  
 }
 
 /* ~~~~~~~~~~   FORM STYLE & POSITION   ~~~~~~~~~~ */
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;  
-}
-
-
-form label{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-
-form input{
-  width: 100%;
-  height: 3rem;
-
-  border: 0.2rem solid #ee52ba;
-  border-radius: 1rem;
-  background-color: #eee1ee;  
-}
-
-textarea{
-  width: 100ù;
-  height: 15rem;
-  border: 0.2rem solid #ee52ba;
-  border-radius: 1rem;
-  background-color: #eee1ee;
-}
-
-/* ~~~~~~~~~~   PRENOM + MAIL INPUT POSITION   ~~~~~~~~~~ */ 
+form,
+form label,
 .form__row {
   display: flex;
   flex-direction: column;
@@ -1265,17 +1148,35 @@ textarea{
   gap: 1rem;
 }
 
+form input,
+textarea {
+  width: 100%;
+  border: 0.2rem solid #ee52ba;
+  border-radius: 1rem;
+  background-color: #eee1ee;
+}
+
+form input {
+  height: 3rem;
+}
+
+textarea {
+  height: 15rem;
+}
+
+form .cta__btn{
+  width: 20rem;
+}
+
+
 /* ~~~~~~~~~~   CHECKBOX STYLE & POSITION   ~~~~~~~~~~ */
 .checkbox-label{
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   gap:1rem;
-  padding: 0;
-  margin-left: 0;
   font-size: 1.4rem;
   font-weight: 300;
-  
 }
 
 .checkbox-label input[type="checkbox"] {
@@ -1292,65 +1193,24 @@ textarea{
   font-size: 1.2rem;
 }
 
-/* ~~~~~~~~~~   FORM BUTTON SUBMIT   ~~~~~~~~~~ */
-.submit__btn{
-  display: block;
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: 700;  
-  padding: 1rem 3rem;
-  background: none;
-
-  
-  border: solid;
-  border-radius: 2rem;  
-  color: #4a0867;
-  box-shadow: 0 6px 15px rgba(118, 3, 126, 0.6);
-  
-
-  transition: 
-  background-color 0.3s ease, 
-  box-shadow 0.3s ease, 
-  transform 0.2s ease;
-  backdrop-filter: blur(10px);
-  cursor: pointer;
-}
-
-.submit__btn:hover{
-  background-color: rgba(234, 150, 231, 0.51);
-  box-shadow: 0 4px 10px rgba(234, 215, 227, 0.3);
-}
-
-.submit__btn:active{
-  transform: scale(0.97);
-  background-color: rgba(255, 255, 255, 0.236);
-  box-shadow: 0 4px 10px rgba(234, 215, 227, 0.3);
-}
-
 /* ~~~~~~~~~~   INSTA PART   ~~~~~~~~~~ */
 .contact__grid-item--insta-share {  
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.contact__grid-item--insta-share h3 {
-  align-self: flex-start;
-  text-align: left;
-  width: 100%;
+  text-align: center;
+  padding: 1rem;
 }
 
 .contact__grid-item--insta-share svg{
-  color: #4f1a8b;
   width: 10rem;
   height: auto;
 }
 
 
-
                   /* ~~~~~~~~~~~~~~~~~~~~~~~~  Desktop   ~~~~~~~~~~~~~~~~~~~~~ */
 
-@media (min-width: 750px) {
+@media screen and (min-width: 750px) {
 
 /* ~~~~~~~~~~   GRID POSITION   ~~~~~~~~~~ */
   .contact__grid{    
@@ -1384,61 +1244,17 @@ textarea{
     flex: 1;
 } 
 }
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   END CONTACT SECTION  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
-              /* ~~~~~~~~~~~~~~~~~~~~~~~~  Dark Mode   ~~~~~~~~~~~~~~~~~~~~~ */
-
-@media (prefers-color-scheme: dark) {
-   .submit__btn {
-    color: #eee1ee;
-    border-color: #eee1ee;
-    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.4);
-  }
-
-  .submit__btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
-  }
-
-  .submit__btn:active {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: scale(0.97);
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-  }
-
-  .contact__grid-item--insta-share svg{
-  color: #9c5ce5;
-  
-}
-}
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ END CONTACT SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-/*  *********************************    END - INDEX   ******************************************  */
-
+/*  *************************************    END - INDEX   ******************************************  */
 
 
 
 
 /*  *****************************    START - NUANCIERS / STICKERS PAGES  ******************************  */
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ START CAROUSEL 3D SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ CAROUSEL 3D STYLE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-/* ~~~~~~~~~~   TITLE   ~~~~~~~~~~ */
-.carousel3D__title{
-  display: flex;
-  flex-direction: column;  
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-top: 3rem;
-  padding: 1rem;
-  gap: 2rem;
-  width:100%;  
-}
-
-h1{
-  font-size: 4rem;
-}
 /* ~~~~~~~~~~   CAROUSEL CONTAINER   ~~~~~~~~~~ */
 .carousel3D__wrapper{
   width: 100%;
@@ -1451,7 +1267,7 @@ h1{
 }
 
 /* ~~~~~~~~~~   CAROUSEL POSITION   ~~~~~~~~~~ */
-.carousel3D__nuanciers{
+.carousel3D__items{
   display: flex;
   width: 100%;
   max-width:100%;
@@ -1469,49 +1285,36 @@ h1{
   overflow: visible;
   display: flex;
   justify-content: center;
-  align-items: center;  
+  align-items: center; 
+
 /* ~~~~~~~~~~  MASKING SCROLLBAR   ~~~~~~~~~~ */
   scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE et Edge */
+  -ms-overflow-style: none;  /* Edge */
 }
-
 .carousel3D__slide::-webkit-scrollbar { /* Safari */
   display: none;
 }
 
-
 /* ~~~~~~~~~~   BUTTONS  ~~~~~~~~~~ */
-.carousel3D__btn{  
+.carousel3D__swiper-nav{  
   display: flex;
   justify-content:center;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
   pointer-events: all;
   z-index: 2;   
 }
 
-.carousel3D__btn--prev {
+.swiper__btn--prev {
   left: 0.5rem;
-  border-radius: 50%;
-  background-color: rgba(255, 105, 180, 0.2); 
-  border: none; 
-  position: absolute;
-  bottom: -20rem;  /* descend le bouton */  
+  top: 10rem; /*descends le bouton */
+  position: absolute;  
 }
 
-.carousel3D__btn--next {
+.swiper__btn--next {
   right: 0.5rem;
-  border-radius: 50%;
-  background-color: rgba(255, 105, 180, 0.2); 
-  border: none;
-  position: absolute; 
-  bottom: -20rem;  /* descend le bouton */    
+  top: 10rem; 
+  position: absolute;  
 }
-
-.carousel3D__btn svg{
-  fill: #eee1ee;
-}
-
 
 /* ~~~~~~~~~~   CARDS   ~~~~~~~~~~ */
 .carousel3D__card {
@@ -1543,40 +1346,27 @@ h1{
   padding: 0.5rem;
   font-size: 1.2rem;
 
-  background-color: rgba(238, 73, 205, 0.3);
+  background-color: rgba(238, 73, 205, 0.2);
   backdrop-filter: blur(10px);
-  box-shadow:
-      rgba(57, 5, 73, 0.25) 0px 50px 100px -20px,
-      rgba(70, 4, 71, 0.3) 0px 30px 60px -30px,
-      rgba(52, 1, 52, 0.35) 0px -2px 6px 0px inset;  
+ 
 }
-
 
 
                   /* ~~~~~~~~~~~~~~~~~~~~~~~~  Desktop   ~~~~~~~~~~~~~~~~~~~~~ */
 
-@media (min-width: 750px) {
-/* ~~~~~~~~~~   TITLE   ~~~~~~~~~~ */
-  h1{
-    font-size: 5rem;
-  }
-
-  .carousel3D__title{  
-    margin-top: 15rem;    
-}
+@media screen and (min-width: 750px) {
 
 /* ~~~~~~~~~~   BUTTONS   ~~~~~~~~~~ */
-  .carousel3D__btn--prev {
+  .swiper__btn--prev {
     left: 20rem;  
 }
 
-.carousel3D__btn--next {
+.swiper__btn--next {
   right: 20rem;   
 }
 }
 
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   NUANCIERS - IMAGES   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  NUANCIERS IMAGES  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .carousel3D__card--N1{
     background: url(images/produits/nuanciers/nuancier-eventail-telecharger-color-kit.webp);
     background-size: cover;
@@ -1637,8 +1427,6 @@ h1{
     background-size: cover;
 }
 
-
-
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   STICKERS - IMAGES   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .carousel3D__card--S1{
     background: url(images/produits/stickers/stickers-rond-1-130-color-kit.webp);
@@ -1694,253 +1482,49 @@ h1{
     background: url(images/produits/stickers/stickers-inspirants-color-kit.webp);
     background-size: cover;
 }
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ END CAROUSEL 3D SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ START CTA  SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-/* ~~~~~~~~~~   CTA CARDS GRID   ~~~~~~~~~~ */
-.carousel3D__cta {
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
-  text-align: center; 
-}
-
-.cta__grid{
-  display: flex;
-  align-items: stretch; 
-  justify-items: flex-start;
-  gap: 0.5rem;
-}
-
-/* ~~~~~~~~~~  CARDS STYLES   ~~~~~~~~~~ */
-.cta__grid-item{  
-  width: 16rem;
-  height: auto;
-  margin: 1rem;
-  padding: 1rem;
-
-  border-radius: 2rem;
-  background-color: rgba(238, 73, 205, 0.3);
-  backdrop-filter: blur(10px);
-  box-shadow:
-      rgba(57, 5, 73, 0.25) 0px 50px 100px -20px,
-      rgba(70, 4, 71, 0.3) 0px 30px 60px -30px,
-      rgba(52, 1, 52, 0.35) 0px -2px 6px 0px inset;
-}
-
-.cta__card-img{
-  width: 12rem;
-  height: auto;
-}
-
-/* ~~~~~~~~~~  CTA CARDS CAPTION   ~~~~~~~~~~ */
-.cta__card-inner{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.cta__card-description{
-  font-size: 1.2rem;
-}
-
-
-
-                  /* ~~~~~~~~~~~~~~~~~~~~~~~~  Desktop   ~~~~~~~~~~~~~~~~~~~~~ */
-
-@media (min-width: 750px) {
-
-  .cta__grid{
-    gap: 3rem;
-}
-
-/* ~~~~~~~~~~   CARDS STYLE   ~~~~~~~~~~ */
-  .cta__grid-item {
-    width: 32rem; 
-    padding: 1.5rem;
-    margin: 1rem auto; 
-}
-  .cta__card-img {
-    max-width: 12rem; 
-    margin: 0 auto 1rem; 
-    display: block;
-}
-
-.cta__card-description{
-  font-size: 1.6rem;
-}
-}
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ START CTA  SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
 /*  ****************************    END -  NUANCIERS / STICKERS PAGES  *******************************  */
 
 
 
-
-
-
-
 /*  *************************************   START TRACKERS PAGE  **************************************  */
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ START TRACKERS SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-.trackers__title{
-  display: flex;
-  flex-direction: column;  
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-top: 3rem;
-  padding: 1rem;
-  gap: 2rem;
-  width:100%;  
-}
-
 .trackers__grid{
-  display: grid;
-  grid-template-columns: 1fr; 
-  justify-items: center;
-  
-}
-/* ~~~~~~~~~~   CARDS STYLES   ~~~~~~~~~~ */
-.trackers__grid-item{
-  width: 35rem;
-  height: auto;
-  margin: 1rem;
-  padding: 1rem;
-
-  align-items: center;
-  justify-content: center;
-
-  background: url(/images/produits/trackers/splash2.png);
-  background-position: 60% center; 
-}
-
-.trackers__card-title{
-  text-align: center;
-    text-shadow: 
-    0 0 5px #ffaaf2,    
-    0 0 10px #d96aff,   
-    0 0 20px #b35cd6,   
-    0 0 30px #9a44b5;
-}
-
-.trackers__card {
-  display: flex;
+  display:flex;
   flex-direction: column;
-  align-items: center;  
-  justify-content: flex-start;
-}
-
-/* ~~~~~~~~~~   CARDS CAPTION   ~~~~~~~~~~ */
-.trackers__card-inner{
-  display: flex;
-  flex-direction: column;
+  gap: 1rem;
   align-items: center;
-  justify-content: center;
-  text-align: justify;
+  justify-items: center;  
 }
-
-/* ~~~~~~~~~~   BUTTON   ~~~~~~~~~~ */
-.trackers__card-btn {
-  display: block;
-  text-align: center;
-  margin: 3rem;
-  padding: 0.9rem 2rem;
-
-  border: solid;
-  border-radius: 2rem;  
-  color: #4a0867;
-  box-shadow: 0 6px 15px rgba(118, 3, 126, 0.6);
-  
-
-  transition: 
-    background-color 0.3s ease, 
-    box-shadow 0.3s ease, 
-    transform 0.2s ease;
-  backdrop-filter: blur(10px);
-  cursor: pointer;
-}
-
-.trackers__card-btn:hover{
-  background-color: rgba(234, 150, 231, 0.51);
-  box-shadow: 0 4px 10px rgba(234, 215, 227, 0.3);
-}
-
-.trackers__card-btn:active{
-  transform: scale(0.97);
-  background-color: rgba(255, 255, 255, 0.236);
-  box-shadow: 0 4px 10px rgba(234, 215, 227, 0.3);
+/* ~~~~~~~~~~   CARDS SIZE   ~~~~~~~~~~ */
+.card--trackers {
+  max-width: 40rem;
 }
 
                     /* ~~~~~~~~~~~~~~~~~~~~~~~~  Desktop   ~~~~~~~~~~~~~~~~~~~~~ */
 @media screen and (min-width: 750px){
 
-  .trackers__title{
-    margin-top: 15rem;    
-}
-
- .trackers__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  .trackers__grid{
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
     width: 100%;
+    gap: 8rem;    
   }
-
-  .trackers__grid-item {
-    width: 40rem;
-    height: auto;
-    margin: 1rem;
-  }
-
-  .trackers__grid-item--4 {
-    grid-column: 1 / -1;    
-    width: 100rem;    
-  }
-
-  .trackers__grid-item--4 img{
-    width: 60rem;
-    height: auto;    
+  .card--trackers .card__inner{
+    margin-top: auto; 
   }
 }
 
-                    /* ~~~~~~~~~~~~~~~~~~~~~~~~  Dark Mode   ~~~~~~~~~~~~~~~~~~~~~ */
-
-@media (prefers-color-scheme: dark) {
-  /* ~~~~~~~~~~ BUTTONS ~~~~~~~~~~ */
-   .trackers__card-btn {
-    color: #eee1ee;
-    border-color: #eee1ee;
-    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.4);
-  }
-
-  .trackers__card-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
-  }
-
-  .trackers__card-btn:active {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: scale(0.97);
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-  }
-}
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ END TRACKERS SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
+/*  *************************************   END TRACKERS PAGE  **************************************  */
 
 
 
 /*  ***************************    START - LANDING STICKERS & TRACKERS   *****************************  */
 
-/* ~~~~~~~~~~   STICKERS IMAGE   ~~~~~~~~~~ */
-.comingsoon__stickers {
+/* ~~~~~~~~~~   BACKGROUND IMAGE   ~~~~~~~~~~ */
+.landing__page{
   width: 100%;
   min-height: 100vh;
 
-  background-image: url('../images/landing/stickers-portrait-landing-color-kit.png');
   background-size: contain; 
   background-repeat: no-repeat;
   background-position: bottom;
@@ -1948,28 +1532,19 @@ h1{
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 1rem;
+  padding: 1rem;
 }
 
-/* ~~~~~~~~~~   TRACKERS IMAGE   ~~~~~~~~~~ */
-.comingsoon__trackers{
-  width: 100%;
-  min-height: 100vh;
+.landing__page--stickers {
+  background-image: url('../images/landing/stickers-portrait-landing-color-kit.png');  
+}
 
+.landing__page--trackers {
   background-image: url('../images/landing/trackers-portrait-landing-color-kit.png');
-  background-size: contain; 
-  background-repeat: no-repeat;
-  background-position: bottom;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 4rem 1rem;
 }
-
 
 /* ~~~~~~~~~~   ENCART TEXT   ~~~~~~~~~~ */
-.comingsoon__overlay {
+.landing__overlay {
   width: 100%;
   max-width: 100rem;
 
@@ -1979,89 +1554,39 @@ h1{
 
   border-radius: 1.5rem;
   padding: 2rem;
-  margin-top: 5rem; 
+  margin-top: 1rem; 
   text-align: center;
 }
 
-.comingsoon__text {
-  color: white;
+.landing__text {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  color: white;
 }
 
-.comingsoon__title {
+.landing__title {
   font-size: 2.5rem;
   font-weight: 700;
 }
 
-.comingsoon__description {
-  font-size: 1.8rem; 
+.landing__description {
   padding: 2rem;
-  text-align: justify;
-}
-
-/* ~~~~~~~~~~   BUTTONS LINK   ~~~~~~~~~~ */
-.comingsoon__btn-shop{
-    border: solid; 
-    padding: 0.9rem 2rem;
-    border-radius: 2rem;  
-    color: #eee1ee;
-    box-shadow: 0 6px 15px rgba(122, 3, 126, 0.6);  
-
-  transition: 
-    background-color 0.3s ease, 
-    box-shadow 0.3s ease, 
-    transform 0.2s ease;
-  backdrop-filter: blur(10px);
-  cursor: pointer;
-}
-
-.comingsoon__btn-shop:hover{
-  background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 10px rgba(234, 215, 227, 0.3);
-}
-
-.comingsoon__btn-shop:active{
-  transform: scale(0.97);
-  background-color: rgba(255, 255, 255, 0.236);
-  box-shadow: 0 4px 10px rgba(234, 215, 227, 0.3);
-}
-
-/* ~~~~~~~~~~   BUTTON BACK  ~~~~~~~~~~ */
-.comingsoon__btn-back {  
-  display: inline-flex;
   text-align: center;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin: 3rem;
-  padding: 0.9rem 2rem;
-  background: none;
 }
 
-.comingsoon__btn-back:hover{
-  color: #eee1ee
+.landing__btn {
+  display: flex;
+  justify-content: center;
 }
 
 /* ~~~~~~~~~~   FOOTER  ~~~~~~~~~~ */
-.footer-landing__container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.landing-page .footer__grid{
   justify-content: center;
-  text-align: center;
-  font-size: 1.2rem;
-  padding: 1rem;
-
-  background-color: rgba(106, 13, 127, 0.3);
-  backdrop-filter: blur(10px);  
 }
 
-.footer-landing__logo{
-  width: 5rem;
-  height: 5rem;
+.landing-page .footer__grid-item--quick-links, .landing-page .footer__grid-item--social{
+  display: none
 }
 
                   /* ~~~~~~~~~~~~~~~~~~~~~~~~  Desktop   ~~~~~~~~~~~~~~~~~~~~~ */
@@ -2069,18 +1594,12 @@ h1{
 @media (min-width: 750px) {
   /* ~~~~~~~~~~   IMAGES  ~~~~~~~~~~ */
 
-  .comingsoon__stickers {
+  .landing__page--stickers {
     background-image: url('../images/landing/stickers-paysage-landing-color-kit.png');
 }
 
-  .comingsoon__trackers{ 
+  .landing__page--trackers { 
     background-image: url('../images/landing/trackers-paysage-landing-color-kit.png');
-}
-
-/* ~~~~~~~~~~   FOOTER LOGO  ~~~~~~~~~~ */
-.footer-landing__logo{
-  width: 10rem;
-  height: 10rem;
 }
 }
 /*  ***************************   END - LANDING STICKERS & TRACKERS   *****************************  */

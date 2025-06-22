@@ -159,4 +159,3 @@ matin: Modification du visuel des landing pages
 Done
 15/6/2025
 aprem : revue de tous les fichiers / Test des liens et des boutons.
-

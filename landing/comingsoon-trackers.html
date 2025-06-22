@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../style.css"/>
 </head>
 
-<body>
+<body class="landing-page">
 <!--  +++++++++++++++++++++++++++++++++++++++  NO HEADER   +++++++++++++++++++++++++++++++++++++  -->
 
 
@@ -24,50 +24,79 @@
 
             <!-- ----------------------   ENCART TEXT & BUTTON   ------------------------- -->
 
-<section class="comingsoon__trackers" aria-label="Les stickers Color Kit arrivent prochainement en boutique Etsy">
-    <div class="comingsoon__overlay">      
+<section id="landing-trackers" class="landing__page landing__page--trackers" aria-label="Les stickers Color Kit arrivent prochainement en boutique Etsy">
+    <div class="landing__overlay">      
         
-        <div class="comingsoon__text">
-            <h1 class="comingsoon__title">Coming Soon</h1>
+        <div class="landing__text">
+            <h1 class="landing__title">Ton tracker Color Kit arrive bientôt!</h1>
                     
-            <p class="comingsoon__description">
+            <p class="landing__description">
                 Les livres de trackers arrivent bientôt sur Amazon ! En attendant, suis-moi sur Instagram pour être sûr de ne pas manquer leur sortie !
             </p>
         </div>
 
-        <div class="comingsoon__btn">
-            <a href="https://www.instagram.com/gagathecolors/" class="comingsoon__btn-shop" target="_blank" rel="noopener noreferrer" aria-label="Accéder à la page Instagram de Gagathe Colors">
+        <div class="landing__btn">
+            <a href="https://www.instagram.com/gagathecolors/" class="cta__btn" target="_blank" rel="noopener noreferrer" aria-label="Accéder à la page Instagram de Gagathe Colors">
             Suivre sur Instagram
             </a>
         </div>
     </div>
 </section>
 
-            <!-- ----------------------   BACK BUTTON   ------------------------- -->
-<div class="comingsoon__back"> 
-        <a href="../index.html#hero" class="comingsoon__btn-back" aria-label="Retour à l'accueil du site Color Kit">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="15">
-            <path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
-            </svg><span>Retour à l'accueil</span> 
-        </a>
-    </div>
-
 </main>
 <!--  +++++++++++++++++++++++++++++++   END MAIN CONTENT   +++++++++++++++++++++++++++++++++++  -->
 
 
 
-<!--  +++++++++++++++++++++++++++++++   START FOOTER SECTION   +++++++++++++++++++++++++++++++++++  -->
-    <footer class="footer">
-        <div class="footer-landing__container">
-            <div class="footer-landing__content">
-                <img src="../images/logos/logo-color-kit.png" class="footer-landing__logo" alt="Logo Color Kit" width="100" height="100">           
-                <p class="footer-landing__text">© 2025 Color Kit - Tous droits réservés</p>
-                <p class="footer-landing__text">Conception Web - Aml Digital</p>
+<!--  ++++++++++++++++++++++++++++++++++++++   START FOOTER  +++++++++++++++++++++++++++++++++++++  -->
+    
+<footer class="footer">
+
+    <div class="footer__container">
+
+        <div class="footer__grid">
+<!-- QUICK LINKS -->  
+            <div class="footer__grid-item footer__grid-item--quick-links">
+                <h3>Accès rapide</h3>
+                <ul class="quick-links list-unstyled">
+                    <li><a href="#hero">Accueil</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="pages/nuanciers.html">Nuanciers</a></li>
+                    <li><a href="pages/trackers.html">Trackers</a></li>
+                    <li><a href="pages/stickers.html">Stickers</a></li>
+                    <li><a href="#gallery">Color Kit : nos outils, vos créations</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+<!-- SOCIALS -->
+            <div class="footer__grid-item footer__grid-item--social">
+            <h3>Réseaux et boutique:</h3>               
+                <ul class="social-links list-unstyled">
+                    <li><a href="https://www.instagram.com/gagathecolors/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Gagathe Colors">
+                        <svg class="icon__insta" width="50" height="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+                        </svg>
+                        </a>
+                    </li>
+                    <li><a href="https://www.etsy.com/fr/shop/ColorKitByGagathe" target="_blank" rel="noopener noreferrer" aria-label="Etsy de Color Kit">
+                        <svg class="icon__etsy" width="50" height="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M384 348c-1.8 10.8-13.8 110-15.5 132-117.9-4.3-219.9-4.7-368.5 0v-25.5c45.5-8.9 60.6-8 61-35.3 1.8-72.3 3.5-244.1 0-322-1-28.5-12.1-26.8-61-36v-25.5c73.9 2.4 255.9 8.6 363-3.8-3.5 38.3-7.8 126.5-7.8 126.5H332C320.9 115.7 313.2 68 277.3 68h-137c-10.3 0-10.8 3.5-10.8 9.8V241.5c58 .5 88.5-2.5 88.5-2.5 29.8-1 27.6-8.5 40.8-65.3h25.8c-4.4 101.4-3.9 61.8-1.8 160.3H257c-9.2-40.1-9.1-61-39.5-61.5 0 0-21.5-2-88-2v139c0 26 14.3 38.3 44.3 38.3H263c63.6 0 66.6-25 98.8-99.8H384z"/>
+                        </svg>
+                        </a>
+                    </li>
+                </ul>                 
+            </div> 
+
+<!-- LEGAL MENTIONS -->
+            <div class="footer__grid-item footer__grid-item--legal">
+                <p class="footer__text">© 2025 Color Kit - Tous droits réservés</p>                
+                <p class="footer__text">Design & Développement web - Aml Digital</p>
+                <a href="../index.html#hero" aria-label="Accueil - Color Kit">
+                <img src="../images/logos/logo-color-kit.png" alt="Logo Color Kit" class="logo logo--footer" width="50" height="50">  
+    <!-- TO DO : Ajout des links Mentions Légales et Pol de conf -->
             </div>
         </div>
-    </footer>
-<!--  +++++++++++++++++++++++++++++++   END FOOTER SECTION   +++++++++++++++++++++++++++++++++++  -->
+    </div>
+</footer>
+<!--  ++++++++++++++++++++++++++++++++++++++   END FOOTER  +++++++++++++++++++++++++++++++++++++  -->
 
 </body>
 </html>

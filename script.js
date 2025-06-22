@@ -25,8 +25,8 @@ setupBurgerMenu('.burger__btn', '#menu-desktop');
 
  document.addEventListener('DOMContentLoaded', () => {
     const wrapper = document.querySelector('.gallery__swiper-wrapper');
-    const btnPrev = document.querySelector('.gallery__swiper-btn--prev');
-    const btnNext = document.querySelector('.gallery__swiper-btn--next');
+    const btnPrev = document.querySelector('.swiper__btn--prev');
+    const btnNext = document.querySelector('.swiper__btn--next');
 
     const scrollAmount = 700; // swipe de 700px 
 
@@ -54,8 +54,8 @@ setupBurgerMenu('.burger__btn', '#menu-desktop');
 
 
 const cards = document.querySelectorAll('.carousel3D__card');
-const prevBtn = document.querySelector('.carousel3D__btn--prev');
-const nextBtn = document.querySelector('.carousel3D__btn--next');
+const prevBtn = document.querySelector('.swiper__btn--prev');
+const nextBtn = document.querySelector('.swiper__btn--next');
 const totalCards = cards.length;
 let centerIndex = Math.floor(totalCards / 2);
 
