@@ -5,9 +5,15 @@
 
 <head>
     <meta charset="UTF-8"/>
-    <title>Color Kit - Nuanciers, trackers et stickers pour fans de coloriage</title>
+    <title>Nuanciers, trackers et stickers Color Kit | Organisation coloriage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Color Kit t’accompagne dans ton univers coloriage avec des nuanciers à imprimer, des trackers pour suivre tes pages et des stickers assortis pour t’organiser avec style."/>
+    <meta name="description" content="Télécharge des nuanciers à imprimer, découvre des trackers et des stickers créatifs. Idéal pour les fans de coloriage adulte et de loisirs créatifs."/>
+    <!-- BALISES OPEN GRAPH pour le partage sur les réseaux -->
+    <meta property="og:title" content="Nuanciers, trackers et stickers Color Kit | Organisation coloriage"/>
+    <meta property="og:description" content="Télécharge des nuanciers à imprimer, découvre des trackers et des stickers créatifs. Idéal pour les fans de coloriage adulte et de loisirs créatifs."/>
+    <meta property="og:image" content="https://colorkit.netlify.app/images/og-image.webp"/>
+    <meta property="og:url" content="https://colorkit.netlify.app"/>
+    <meta property="og:type" content="website"/>
     <link rel="shortcut icon" href="images/icones/favicon.ico" type="image/x-icon"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">      
@@ -26,7 +32,7 @@
         <a href="#hero" aria-label="Accueil - Color Kit"> <!-- logo cliquable retour accueil -->
         <img src="images/logos/logo-color-kit.png" alt="Logo Color Kit" class="logo logo--header" width="100" height="100">
         </a>
-        <h1 class="desktop__only">Organise ta passion coloriage</h1>
+        <h1 class="desktop__only">Nuanciers, Trackers et Stickers pour fans de coloriage</h1>
 
 <!-- NAVIGATION -->             
         <nav class="burger__menu" role="navigation" aria-label="Menu principal"> <!-- role="navigation" et aria-label (étiquette) sur la nav meilleure accessibilité et compréhension par les lecteurs d’écran -->
@@ -41,7 +47,7 @@
 
             <div class="burger__wrap" id="menu-desktop">              
                 <ul class="burger__list list-unstyled">
-                    <li><a href="#hero">Accueil</a></li>
+                    <li><span class="current">Accueil</span></li>
                     <li><a href="#about">À propos</a></li>
                     <li><a href="pages/nuanciers.html">Nuanciers</a></li>
                     <li><a href="pages/trackers.html">Trackers</a></li>
@@ -72,7 +78,7 @@
             </div>
     <!-- HERO INTRO -->
             <div class="hero__grid-item hero__grid-item--right"> 
-                <p class="hero__text">Des nuanciers, trackers et stickers pour t'organiser et ajouter du fun dans ta routine coloriage !</p>
+                <p class="hero__text"> Color Kit propose des outils essentiels pour les passionné(e)s de coloriage : nuanciers à imprimer pour gérer tes couleurs, carnets de suivi (trackers) pour noter tes colos terminés, et stickers assortis pour personnaliser tes pages. Que tu sois amateur ou addict au coloriage, tu vas aimer t’organiser avec style !</p>
                 <a href="pages/nuanciers.html" class="cta__btn cta__btn--hero">Découvre les nuanciers gratuits</a>
             </div>
         </div>
@@ -90,7 +96,7 @@
 
         <h2 class="about__title">À propos de Color Kit</h2>
 
-        <div class="about__grid">            
+        <div class="about__grid">        
 
             <div class="about__grid-item about__grid-item--img">                                 
     <!-- IMAGES SLIDER AUTO REPEAT X3 (CSS Anim Only) -->
@@ -171,11 +177,14 @@
                     </ul>
                 </div>
             </div> <!--  TO DO : passer l'anim en JS  -->
+            <p class="sr-only">
+            Découvre les différents produits Color Kit : nuanciers à imprimer pour ranger et retrouver tes couleurs, trackers pour suivre tes coloriages, et stickers assortis pour organiser ton quotidien créatif.
+            </p>
 
     <!-- TEXT INTRO -->
             <div class="about__grid-item about__grid-item--intro">
-            <p>Color Kit, c’est ta collection ultime de nuanciers, trackers et stickers, conçue pour t’aider à suivre tes coloriages au fil du temps, organiser et garder tes couleurs bien rangées, et surtout ajouter une dose de fun et de créativité à ta routine artistique.</p> 
-                <p>C'est le kit à avoir pour tous les fans de coloriage!</p>
+            <p>Color Kit, c’est ta collection ultime de <strong>nuanciers à imprimer</strong>, de <strong>trackers pour livres de coloriage</strong> et de <strong>stickers créatifs</strong>. Idéal pour <strong>suivre tes coloriages</strong>, organiser et garder tes couleurs bien rangées, et surtout ajouter une dose de fun et de créativité à ta routine artistique.</p> 
+            <p>C'est le kit à avoir pour tous les fans de coloriage!</p>
             </div>
         
     <!-- BIO -->
@@ -185,11 +194,11 @@
                 </div>
 
                 <div class="about__grid-item about__grid-item--text">
-                    <p>Je suis Gagathe, créative dans l’âme et passionnée de coloriage depuis toujours. J’adore quand tout est bien organisé, J’adore quand tout est bien organisé, quand chaque couleur trouve sa place et quand chaque détail est pensé avec soin. C’est pour ça que j’ai imaginé Color Kit : une collection d’outils pratiques, esthétiques et fun pour que ton moment coloriage soit encore plus apaisant, fluide et inspirant.</p>
+                    <p>Je suis Gagathe, créative dans l’âme et <strong>passionnée de coloriage</strong> depuis toujours. J’adore quand tout est bien organisé, quand chaque couleur trouve sa place et quand chaque détail est pensé avec soin. C’est pour ça que j’ai imaginé <strong>Color Kit</strong> : une collection d’outils pratiques, esthétiques et fun pour que ton moment coloriage soit encore plus apaisant, fluide et inspirant.</p>
 
-                    <p>Mon but ? T’aider à libérer ta créativité tout en gardant une trace de tes progrès, de tes palettes… Avec des outils qui te motivent à sortir tes crayons.</p>
+                    <p>Mon but ? T’aider à <strong>libérer ta créativité</strong> tout en gardant une trace de tes progrès, de tes palettes… Avec des outils qui te motivent à sortir tes crayons.</p>
 
-                    <p>Colorier, c’est plus qu’un hobby, c’est une bulle de calme, une façon d’exister pleinement dans l’instant. Et je suis très heureuse de pouvoir t’accompagner dans ce voyage coloré.</p>
+                    <p><strong>Colorier</strong>, c’est plus qu’un hobby, c’est une bulle de calme, une façon d’exister pleinement dans l’instant. Et je suis très heureuse de pouvoir t’accompagner dans ce voyage coloré.</p>
                 </div>
             </div>
         </div>
@@ -209,8 +218,8 @@
             <div class="card card--products">                
                 <img src="images/produits/nuanciers-color-kit.png" alt="Nuanciers Color Kit" width="500" height="500" class="card__img" loading="lazy">
                 <div class="card__inner">
-                    <h3 class="card__title">Nuanciers</h3>
-                    <p class="card__description">Formats A4, A5 et éventail à imprimer pour organiser facilement toutes tes couleurs.</p>
+                    <h3 class="card__title">Nuanciers à imprimer</h3>
+                    <p class="card__description">Organise ta collection de feutres, crayons et stylos avec nos nuanciers A4, A5 ou format éventail à imprimer. Parfait pour tester tes couleurs et créer ta palette personnalisée.</p>
                     <a href="pages/nuanciers.html" class="cta__btn">Imprimer mes nuanciers</a>
                 </div>                
             </div>
@@ -218,8 +227,8 @@
             <div class="card card--products">                
                 <img src="images/produits/trackers-color-kit.png" alt="Trackers Color Kit" width="500" height="500" class="card__img" loading="lazy">
                 <div class="card__inner">
-                    <h3 class="card__title">Trackers</h3>
-                    <p class="card__description">En carnet ou en marque-pages, pour suivre tous tes coloriages en un coup d'oeil.</p>
+                    <h3 class="card__title">Trackers de coloriage</h3>
+                    <p class="card__description">Suis ton avancée dans tes livres de coloriages mystère en un coup d'oeil. En marque-pages à imprimer ou en carnet, un outil parfait pour fans de coloriage adulte.</p>
                     <a href="pages/trackers.html" class="cta__btn">Choisir mes trackers</a>
                 </div>                
             </div>
@@ -227,12 +236,15 @@
             <div class="card card--products">                
                 <img src="images/produits/stickers-color-kit.png" alt="Stickers Color Kit" width="500" height="500" class="card__img" loading="lazy">
                 <div class="card__inner">
-                    <h3 class="card__title">Stickers</h3>
-                    <p class="card__description">Pour numéroter tes couleurs, compléter tes trackers avec fun et bien plus encore!</p>
+                    <h3 class="card__title">Stickers pour coloriage</h3>
+                    <p class="card__description">Numérote tes feutres, customise tes pages, ajoute une touche fun à tes trackers et organise ton coloriage au quotidien avec nos stickers assortis.</p>
                     <a href="pages/stickers.html" class="cta__btn">Découvrir les stickers</a>
                 </div>                
             </div>
         </div>
+        <p class="sr-only">
+        Color Kit propose des nuanciers à imprimer, des trackers pour suivre ses coloriages, et des stickers créatifs pour customiser son organisation. Parfait pour les passionnés de coloriage adulte, coloriage mystère, ou art-thérapie.
+        </p>
 </section>
 <!--  +++++++++++++++++++++++++++++++   END PRODUCTS SECTION   +++++++++++++++++++++++++++++++++++  -->
 
@@ -263,19 +275,22 @@
     <!--IMAGES-->
             <div class="gallery__swiper-wrapper">
                 <div class="gallery__swiper-slide">
-                    <img src="images/galerie/galerie-nuancier-exemple-color-kit.webp" alt="Création avec les nuanciers Color Kit" width="1200" height="800" class="gallery__img" loading="lazy">
+                    <img src="images/galerie/galerie-nuancier-exemple-color-kit.webp" alt="Exemple d'utilisation des nuanciers Color Kit imprimés, remplis avec des tests de couleurs" width="1200" height="800" class="gallery__img" loading="lazy">
                 </div>
                 <div class="gallery__swiper-slide">
-                    <img src="images/galerie/galerie-stickers-exemple-color-kit.webp" alt="Création avec les stickers Color Kit" width="1200" height="800" class="gallery__img" loading="lazy">
+                    <img src="images/galerie/galerie-stickers-exemple-color-kit.webp" alt="Exemple de stickers Color Kit appliqués dans un carnet de coloriage adulte" width="1200" height="800" class="gallery__img" loading="lazy">
                 </div>
                 <div class="gallery__swiper-slide">
-                    <img src="images/galerie/galerie-stickers-exemple2-color-kit.webp" alt="Création avec les stickers Color Kit" width="1200" height="800" class="gallery__img" loading="lazy">
+                    <img src="images/galerie/galerie-stickers-exemple2-color-kit.webp" alt="Utilisation créative des stickers Color Kit pour suivre ses coloriages" width="1200" height="800" class="gallery__img" loading="lazy">
                 </div>
                 <div class="gallery__swiper-slide">
-                    <img src="images/galerie/galerie-nuancier-exemple-color-kit.webp" alt="Création avec les nuanciers Color Kit" width="1200" height="800" class="gallery__img" loading="lazy">
+                    <img src="images/galerie/galerie-nuancier-exemple-color-kit.webp" alt="Nuancier Color Kit rempli avec feutres et crayons, idéal pour suivre sa palette de couleurs" width="1200" height="800" class="gallery__img" loading="lazy">
                 </div>
             </div>
         </div> 
+        <p class="sr-only">
+        La galerie Color Kit présente des exemples concrets d’utilisation des produits : nuanciers imprimés, trackers coloriage complétés et stickers décoratifs. Découvre comment la communauté personnalise ses outils pour organiser sa passion du coloriage adulte.
+        </p>
 </section> 
 <!--  +++++++++++++++++++++++++++++++   END GALLERY SECTION   +++++++++++++++++++++++++++++++++++  -->
 
@@ -332,7 +347,7 @@
     <!-- INSTA SHARE ITEM -->                        
             <div class="contact__grid-item contact__grid-item--insta-share" aria-label="Partage tes créations sur Instagram"> 
                 <h3>Partage tes créations</h3>  
-                <p>Montre-nous tes créations avec les supports Color Kit ! Tague <strong>@gagathecolors</strong> ou utilise le hashtag <strong>#ColorKit</strong> sur Instagram pour que je puisse les repartager dans notre galerie !</p>
+                <p>Montre-nous tes créations avec les outils Color Kit ! Tague <strong>@gagathecolors</strong> ou utilise le hashtag <strong>#ColorKit</strong> sur Instagram pour que je puisse les repartager dans notre galerie !</p>
                 <a href="https://www.instagram.com/gagathecolors/" target="_blank" rel="noopener noreferrer" aria-label="Voir le compte Instagram de Gagathe Colors">
                     <svg class="icon icon--insta" width="50" height="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
                     </svg>

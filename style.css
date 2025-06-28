@@ -28,6 +28,18 @@ body{
   list-style: none; 
  }
 
+ /* ~~~~~~~~~~  SCREEN READER ONLY  ~~~~~~~~~~ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ~~~~~~~~~~  TITLES  ~~~~~~~~~~ */
 h1{
   display: none;
@@ -43,12 +55,17 @@ h1{
 .hero__title {
   font-size: clamp(8rem, 8vw, 6rem);
   font-weight: 700;
-  font-family: "yellowtail", cursive;
+  font-style: italic;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0;
+
+  background: linear-gradient(90deg, #ff66c4, #c047f1, #eee1ee, #ff66c4);
+  background-size: 300%;
+  background-clip: text;
   
-  animation: glowTitle 2s ease-out forwards;
+  
+  animation: glowTitle 2s ease-out forwards, moveGradient 8s linear infinite;
   opacity: 0;
   transform: scale(0.8);
 }
@@ -80,6 +97,12 @@ a {
   text-decoration: none; /* Enlever le soulignement des liens */
   color: inherit; /* Prendre la couleur du parent */
   cursor: pointer;
+}
+
+.current{
+  text-decoration: none;
+  font-style: italic;
+  font-weight: 300;
 }
 
 .legal__link{
@@ -116,6 +139,7 @@ footer p{
 
 .page__intro{
   text-align: center;
+  padding: 2rem;
 }
 
 /* ~~~~~~~~~~  ICONS  ~~~~~~~~~~ */
@@ -198,7 +222,7 @@ footer p{
   } 
   
 .hero__title{
-  font-size: 20rem;
+  font-size: 18rem;
 }
 
 .page__title{
@@ -221,8 +245,7 @@ footer p{
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
-    gap: 30rem;
-
+    gap: 10rem;
     max-width: 1200px;    
     margin: 0 auto;
     padding: 1rem;
@@ -230,6 +253,11 @@ footer p{
 
   .logo--header {
     display: flex;
+  }
+
+  .desktop__only{
+    width: 600rem;
+    text-align: center;
   }
 
 /* ~~~~~~~~~~  FOOTER  ~~~~~~~~~~ */
@@ -371,13 +399,13 @@ body{
   align-items: center;
   text-align: center;
   justify-content: center;
-  gap: 1rem;
-  max-width: 40rem;
+  gap: 0.3rem;
+  max-width: 20rem;
 
   font-size: 1.8rem;
   font-weight: 700;
   margin: 3rem;
-  padding: 0.9rem 2rem;
+  padding: 0.9rem 1rem;
   
   background-color: #4a0867; 
   border-radius: 5rem;
@@ -434,9 +462,10 @@ body{
 .card__inner {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
   width: 100%;
   text-align: center;
+  padding: 0.9rem;
   /* TEXT BCKGROUND */
   background-color: rgba(36, 1, 35, 0.15);  
   backdrop-filter: blur(6px);
@@ -457,7 +486,8 @@ body{
 .crosslinks__grid{
   display: flex;
   align-items: stretch;
-  gap: 0.5rem; 
+  gap: 0.5rem;
+  margin: 1rem; 
 }
 
 .crosslinks__cta{
@@ -640,6 +670,20 @@ body{
     opacity: 1;
     transform: scale(1);
   }
+    to {
+    opacity: 1;
+    transform: scale(1);
+    text-shadow:
+      0 0 10px #f83bd2,
+      0 0 20px #d66aff,
+      0 0 30px #ffffff,
+      0 0 40px #ff66c4;
+  }
+}
+
+@keyframes moveGradient {
+  0% { background-position: 0% }
+  100% { background-position: 300% }
 }
 
 /* ~~~~~~~~~~  ANIM BUTTONS  ~~~~~~~~~~ */
@@ -706,62 +750,60 @@ body{
 /*  **********************************   START - INDEX   ********************************************  */
   
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   START HERO SECTION  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-#hero {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  margin-top: -7rem;
+.hero__container {
+  display: flex; 
+  margin-top: -8rem;
   background-image: url(images/logos/logo-color-kit-0.png);
   background-size: cover;
-  background-position:  center; 
+  background-position: center; 
   background-repeat: no-repeat;
   overflow: hidden;
   
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 1rem;
+  padding: 2rem;
 }
 
  .hero__grid{
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    margin-top: 8rem;
-  }
+    justify-content: center;
+    text-align: center;    
+    margin-top: 5.5rem;
+}
+
+.hero__text{
+  font-size: 1.6rem;
+  text-align: justify;
+}
 
 
                       /* ~~~~~~~~~~~~~~~~~~~~~~~~  Desktop   ~~~~~~~~~~~~~~~~~~~~~ */
 @media screen and (min-width: 750px) {
 
-  #hero { 
-    margin-top: 0; 
+  .hero__container { 
+    margin: 0 2rem; 
     background-position: center;
+    height: 100vh;
   }
 
   .hero__grid{
     flex-direction: row;
-    padding: 0 30rem 0 5rem;
-    gap: 8rem;
-  }
-
-  .hero__grid-item--left{
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .hero__grid-item--right{
-    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    padding: 2rem;
+    margin: 0 auto;
     margin-top: 10rem;
-    text-align: center;
   }
 
 /* ~~~~~~~~~~ TEXT ~~~~~~~~~~ */
   .hero__text{
     font-size: 2.5rem;
-    text-align: center;
+    text-align: justify;
+    margin-top: 5rem;
   }
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   END HERO SECTION  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -824,7 +866,7 @@ body{
 
 /* ~~~~~~~~~~  INTRO COLOR KIT   ~~~~~~~~~~ */
 .about__grid-item--intro {  
-  padding: 1rem;
+  padding: 2rem;
   text-align: justify;  
 }
 
@@ -856,31 +898,21 @@ body{
                 /* ~~~~~~~~~~~~~~~~~~~~~~~~  Desktop   ~~~~~~~~~~~~~~~~~~~~~ */
 @media screen and (min-width: 750px){
 
-/* ~~~~~~~~~~  ORDRE D'APPARITION DIFFERENT   ~~~~~~~~~~ */
-  .about__grid-item--intro {
-    order: 1;
-  }
-
-  .about__grid-item--img {
-    order: 2;
-  }
-
-  .about__grid-item--bio {
-    order: 3;
+/* ~~~~~~~~~~  INTRO COLOR KIT   ~~~~~~~~~~ */
+.about__grid-item--intro{  
+  margin: 8rem; 
+  padding: 3rem;
+  text-align: justify;
 }
+
 /* ~~~~~~~~~~  IMAGES SLIDER   ~~~~~~~~~~ */
   .about__img{
     width: 80rem;
     margin: 0 auto;
 }
-/* ~~~~~~~~~~  INTRO COLOR KIT   ~~~~~~~~~~ */
-.about__grid-item--intro{  
-  padding: 3rem;
-  text-align: center;
-}
 
 /* ~~~~~~~~~~  BIO   ~~~~~~~~~~ */
-.about__grid-item--bio {  
+.about__grid-item--bio { 
   flex-direction: row;
   justify-content: flex-start;  
   padding: 3rem;
@@ -901,6 +933,10 @@ body{
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ START PRODUCTS SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.products{
+  margin: 1rem;
+}
+
 .products__grid{
   display:flex;
   flex-direction: column;
@@ -912,6 +948,10 @@ body{
 
                     /* ~~~~~~~~~~~~~~~~~~~~~~~~  Desktop   ~~~~~~~~~~~~~~~~~~~~~ */
 @media screen and (min-width: 750px){
+
+  .products{
+    margin: 2rem;
+  }
 
   .products__grid{
     flex-direction: row;
@@ -1381,9 +1421,10 @@ form .cta__btn{
 .trackers__grid{
   display:flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
   align-items: center;
-  justify-items: center;  
+  justify-items: center; 
+  margin: 1rem; 
 }
 /* ~~~~~~~~~~   CARDS SIZE   ~~~~~~~~~~ */
 .card--trackers {
