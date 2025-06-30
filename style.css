@@ -1364,18 +1364,8 @@ form .cta__btn{
     background-size: cover;
 }
 
-.carousel3D__card--S2{
-    background: url(images/produits/stickers/stickers-rond-131-260-color-kit.webp);
-    background-size: cover;
-}
-
 .carousel3D__card--S3{
     background: url(images/produits/stickers/stickers-rond-check-color-kit.webp);
-    background-size: cover;
-}
-
-.carousel3D__card--S4{
-    background: url(images/produits/stickers/stickers-rond-mood-color-kit.webp);
     background-size: cover;
 }
 
@@ -1384,33 +1374,13 @@ form .cta__btn{
     background-size: cover;
 }
 
-.carousel3D__card--S6{
-    background: url(images/produits/stickers/stickers-rectangle-131-260-color-kit.webp);
-    background-size: cover;
-}
-
 .carousel3D__card--S7{
     background: url(images/produits/stickers/stickers-carres-check-color-kit.webp);
     background-size: cover;
 }
 
-.carousel3D__card--S8{
-    background: url(images/produits/stickers/stickers-carres-mood-color-kit.webp);
-    background-size: cover;
-}
-
 .carousel3D__card--S9{
     background: url(images/produits/stickers/etiquettes-organisation-color-kit.webp);
-    background-size: cover;
-}
-
-.carousel3D__card--S10{
-    background: url(images/produits/stickers/etiquettes-vierge-color-kit.webp);
-    background-size: cover;
-}
-
-.carousel3D__card--S11{
-    background: url(images/produits/stickers/stickers-inspirants-color-kit.webp);
     background-size: cover;
 }
 /*  ****************************    END -  NUANCIERS / STICKERS PAGES  *******************************  */
